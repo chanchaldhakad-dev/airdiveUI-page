@@ -1,7 +1,7 @@
-import React from 'react';
+import React, { useRef } from 'react';
 import { motion } from 'framer-motion';
 import { SERVICES } from '../data/airdiveData';
-import { Globe, Smartphone, Layout, BrainCircuit, Code2, Cloud, ArrowRight, CheckCircle2 } from 'lucide-react';
+import { Globe, Smartphone, Layout, BrainCircuit, Code2, Cloud, ArrowLeft, ArrowRight, MoveLeft } from 'lucide-react';
 
 const ICON_MAP = {
   Globe,
@@ -13,47 +13,86 @@ const ICON_MAP = {
 };
 
 export default function ServicesSection() {
+  const scrollRef = useRef(null);
+
+  const scroll = (direction) => {
+    if (scrollRef.current) {
+      const { scrollLeft, clientWidth } = scrollRef.current;
+      const scrollAmount = clientWidth * 0.75;
+      scrollRef.current.scrollTo({
+        left: direction === 'left' ? scrollLeft - scrollAmount : scrollLeft + scrollAmount,
+        behavior: 'smooth'
+      });
+    }
+  };
+
   return (
-    <section id="services" className="relative py-28 bg-[#f8fafc] border-b border-slate-200">
+    <section id="services" className="relative py-20 sm:py-28 bg-[#f8fafc] border-b border-slate-200 overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         
-        {/* Header */}
-        <div className="text-center max-w-3xl mx-auto mb-20">
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-sky-50 border border-sky-200 text-sky-800 text-xs font-mono mb-4">
-            <span>SERVICE PORTFOLIO</span>
+        {/* Header & Controls */}
+        <div className="flex flex-col md:flex-row md:items-end justify-between mb-12 sm:mb-16 gap-6">
+          <div>
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-sky-50 border border-sky-200 text-sky-800 text-xs font-mono mb-3 sm:mb-4">
+              <span>SERVICE PORTFOLIO</span>
+            </div>
+            <h2 className="font-display text-3xl sm:text-5xl font-bold tracking-tight text-slate-900">
+              Enterprise IT & <span className="text-gradient-corporate">Software Services</span>
+            </h2>
           </div>
-          <h2 className="font-display text-3xl sm:text-5xl font-bold tracking-tight text-slate-900 mb-4">
-            Enterprise IT & <span className="text-gradient-corporate">Software Services</span>
-          </h2>
-          <p className="text-slate-600 text-sm sm:text-base font-normal">
-            End-to-end technology solutions engineered for reliability, security, and measurable enterprise value.
-          </p>
+
+          {/* Desktop Controls */}
+          <div className="hidden md:flex items-center gap-3">
+            <button
+              onClick={() => scroll('left')}
+              className="p-3 rounded-full bg-white hover:bg-slate-100 border border-slate-200 text-slate-700 hover:text-slate-900 transition-all shadow-sm active:scale-95"
+              aria-label="Scroll left"
+            >
+              <ArrowLeft className="w-5 h-5" />
+            </button>
+            <button
+              onClick={() => scroll('right')}
+              className="p-3 rounded-full bg-white hover:bg-slate-100 border border-slate-200 text-slate-700 hover:text-slate-900 transition-all shadow-sm active:scale-95"
+              aria-label="Scroll right"
+            >
+              <ArrowRight className="w-5 h-5" />
+            </button>
+          </div>
         </div>
 
-        {/* 6 Services Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        {/* Swipe Hint for Mobile */}
+        <div className="flex md:hidden items-center justify-between text-[11px] font-mono text-slate-500 mb-3 px-1">
+          <span>Swipe left to view all services →</span>
+        </div>
+
+        {/* 6 Services Horizontal Scroll / Touch Carousel */}
+        <div
+          ref={scrollRef}
+          className="flex gap-4 sm:gap-6 overflow-x-auto snap-x snap-mandatory pb-6 pt-2 -mx-4 px-4 sm:-mx-6 sm:px-6 lg:-mx-8 lg:px-8 scrollbar-none"
+          style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
+        >
           {SERVICES.map((service, index) => {
             const IconComponent = ICON_MAP[service.icon] || Code2;
 
             return (
               <motion.div
                 key={service.id}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
+                initial={{ opacity: 0, x: 20 }}
+                whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true }}
-                transition={{ duration: 0.4, delay: index * 0.06 }}
-                className="corporate-card p-8 rounded-2xl flex flex-col justify-between group"
+                transition={{ duration: 0.4, delay: index * 0.05 }}
+                className="snap-start flex-shrink-0 w-[85vw] max-w-[320px] sm:w-[350px] corporate-card p-6 sm:p-8 rounded-2xl flex flex-col justify-between group"
               >
                 <div>
-                  <div className="w-12 h-12 rounded-xl bg-sky-50 border border-sky-200 text-sky-600 flex items-center justify-center mb-6 group-hover:scale-105 transition-transform">
+                  <div className="w-12 h-12 rounded-xl bg-sky-50 border border-sky-200 text-sky-600 flex items-center justify-center mb-5 sm:mb-6 group-hover:scale-105 transition-transform">
                     <IconComponent className="w-6 h-6" />
                   </div>
 
-                  <h3 className="font-display text-xl font-bold text-slate-900 mb-3 group-hover:text-sky-700 transition-colors">
+                  <h3 className="font-display text-lg sm:text-xl font-bold text-slate-900 mb-2 sm:mb-3 group-hover:text-sky-700 transition-colors">
                     {service.name}
                   </h3>
 
-                  <p className="text-slate-600 text-xs sm:text-sm leading-relaxed font-normal mb-6">
+                  <p className="text-slate-600 text-xs sm:text-sm leading-relaxed font-normal mb-5 sm:mb-6">
                     {service.description}
                   </p>
 
@@ -62,7 +101,7 @@ export default function ServicesSection() {
                     {service.deliverables.map((del, dIdx) => (
                       <div key={dIdx} className="flex items-center gap-2 text-xs text-slate-700">
                         <CheckCircle2 className="w-3.5 h-3.5 text-sky-600 flex-shrink-0" />
-                        <span>{del}</span>
+                        <span className="truncate">{del}</span>
                       </div>
                     ))}
                   </div>
@@ -76,7 +115,7 @@ export default function ServicesSection() {
                     href="#contact"
                     className="text-xs font-semibold text-sky-600 hover:text-sky-700 flex items-center gap-1"
                   >
-                    Request Proposal
+                    Inquire
                     <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform" />
                   </a>
                 </div>
