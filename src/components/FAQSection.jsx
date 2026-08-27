@@ -11,16 +11,16 @@ export default function FAQSection() {
   };
 
   return (
-    <section id="faq" className="relative py-28 bg-[#0b0f17] border-b border-white/10">
+    <section id="faq" className="relative py-28 bg-white border-b border-slate-200">
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         
         {/* Header */}
         <div className="text-center max-w-2xl mx-auto mb-16">
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-950/40 border border-blue-500/30 text-blue-400 text-xs font-mono mb-4">
+          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-sky-50 border border-sky-200 text-sky-800 text-xs font-mono mb-4">
             <HelpCircle className="w-3.5 h-3.5" />
             <span>FREQUENTLY ASKED QUESTIONS</span>
           </div>
-          <h2 className="font-display text-3xl sm:text-5xl font-bold tracking-tight text-white">
+          <h2 className="font-display text-3xl sm:text-5xl font-bold tracking-tight text-slate-900">
             Enterprise <span className="text-gradient-corporate">FAQ & Engagement</span>
           </h2>
         </div>
@@ -38,7 +38,7 @@ export default function FAQSection() {
                 viewport={{ once: true }}
                 transition={{ duration: 0.3, delay: idx * 0.05 }}
                 className={`corporate-card rounded-2xl overflow-hidden border transition-all duration-200 ${
-                  isOpen ? 'border-blue-500/50 bg-[#162034]' : 'border-white/10'
+                  isOpen ? 'border-sky-500 bg-sky-50/40 shadow-sm' : 'border-slate-200 bg-white'
                 }`}
               >
                 {/* Question Trigger */}
@@ -46,11 +46,11 @@ export default function FAQSection() {
                   onClick={() => toggleIndex(idx)}
                   className="w-full p-6 text-left flex items-center justify-between gap-4 focus:outline-none"
                 >
-                  <span className="font-display font-semibold text-base sm:text-lg text-white">
+                  <span className="font-display font-semibold text-base sm:text-lg text-slate-900">
                     {faq.question}
                   </span>
                   <div className={`w-7 h-7 rounded-full flex items-center justify-center transition-all ${
-                    isOpen ? 'bg-blue-600/30 text-blue-400 rotate-180' : 'bg-white/5 text-slate-500'
+                    isOpen ? 'bg-sky-600 text-white rotate-180' : 'bg-slate-100 text-slate-500'
                   }`}>
                     {isOpen ? <Minus className="w-4 h-4" /> : <Plus className="w-4 h-4" />}
                   </div>
@@ -66,7 +66,7 @@ export default function FAQSection() {
                       transition={{ duration: 0.25, ease: 'easeInOut' }}
                       className="overflow-hidden"
                     >
-                      <div className="px-6 pb-6 pt-0 text-slate-300 text-xs sm:text-sm font-light leading-relaxed border-t border-white/5">
+                      <div className="px-6 pb-6 pt-0 text-slate-600 text-xs sm:text-sm font-normal leading-relaxed border-t border-slate-100">
                         {faq.answer}
                       </div>
                     </motion.div>

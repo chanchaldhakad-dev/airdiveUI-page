@@ -2,7 +2,7 @@ import React, { useState, useMemo } from 'react';
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import { BLOG_POSTS } from '../data/airdiveData';
-import { Search, Calendar, Clock, ArrowRight, ArrowLeft, Tag, BookOpen } from 'lucide-react';
+import { Search, Calendar, ArrowRight, ArrowLeft, BookOpen } from 'lucide-react';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
 import BlogPostModal from '../components/BlogPostModal';
@@ -35,7 +35,7 @@ export default function BlogPage() {
   const featuredPost = BLOG_POSTS[0];
 
   return (
-    <div className="min-h-screen bg-[#05060b] text-slate-100 flex flex-col justify-between">
+    <div className="min-h-screen bg-[#f8fafc] text-slate-800 flex flex-col justify-between">
       <Navbar />
 
       <main className="pt-32 pb-24 flex-grow">
@@ -45,7 +45,7 @@ export default function BlogPage() {
           <div className="mb-8">
             <Link
               to="/"
-              className="inline-flex items-center gap-2 text-xs font-mono text-cyan-400 hover:text-cyan-300 transition-colors"
+              className="inline-flex items-center gap-2 text-xs font-mono text-sky-700 hover:text-sky-900 transition-colors"
             >
               <ArrowLeft className="w-4 h-4" />
               Back to AirDive Main Website
@@ -54,15 +54,15 @@ export default function BlogPage() {
 
           {/* Hero Section */}
           <div className="text-center max-w-3xl mx-auto mb-16">
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-cyan-500/10 border border-cyan-500/30 text-cyan-400 text-xs font-mono mb-4">
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-sky-50 border border-sky-200 text-sky-800 text-xs font-mono mb-4">
               <BookOpen className="w-3.5 h-3.5" />
               <span>AIRDIVE RESEARCH & INSIGHTS</span>
             </div>
-            <h1 className="font-display text-4xl sm:text-6xl font-extrabold text-white tracking-tight mb-4">
-              Engineering <span className="text-gradient-cyan">Knowledge Hub</span>
+            <h1 className="font-display text-4xl sm:text-6xl font-extrabold text-slate-900 tracking-tight mb-4">
+              Engineering <span className="text-gradient-corporate">Knowledge Hub</span>
             </h1>
-            <p className="text-slate-400 text-base font-light">
-              Deep dives into autonomous AI agents, WebGL shaders, cloud infrastructure, and enterprise UX.
+            <p className="text-slate-600 text-base font-normal">
+              Technical publications on cloud architecture, AI workflows, enterprise software, and mobile development.
             </p>
           </div>
 
@@ -77,7 +77,7 @@ export default function BlogPage() {
                 placeholder="Search articles & topics..."
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
-                className="w-full pl-11 pr-4 py-3 rounded-full bg-slate-950/60 border border-white/10 text-xs text-white placeholder-slate-500 focus:outline-none focus:border-cyan-400/60 transition-all shadow-lg"
+                className="w-full pl-11 pr-4 py-3 rounded-full bg-white border border-slate-200 text-xs text-slate-900 placeholder-slate-400 focus:outline-none focus:border-sky-500 transition-all shadow-sm"
               />
             </div>
 
@@ -89,8 +89,8 @@ export default function BlogPage() {
                   onClick={() => setSelectedCategory(cat)}
                   className={`px-4 py-2 rounded-full text-xs font-medium tracking-wide transition-all ${
                     selectedCategory === cat
-                      ? 'bg-cyan-500/20 text-cyan-400 border border-cyan-500/40 shadow-sm'
-                      : 'bg-white/5 text-slate-400 hover:text-white border border-white/5'
+                      ? 'bg-sky-600 text-white font-semibold shadow-sm'
+                      : 'bg-white text-slate-600 hover:text-slate-900 border border-slate-200'
                   }`}
                 >
                   {cat}
@@ -105,38 +105,38 @@ export default function BlogPage() {
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
-              className="glass-card rounded-3xl overflow-hidden mb-16 border border-white/10 grid grid-cols-1 lg:grid-cols-12 gap-8 group cursor-pointer"
+              className="corporate-card rounded-3xl overflow-hidden mb-16 border border-slate-200 grid grid-cols-1 lg:grid-cols-12 gap-8 group cursor-pointer shadow-sm"
               onClick={() => setActiveModalPost(featuredPost)}
             >
-              <div className="lg:col-span-7 h-72 lg:h-auto relative overflow-hidden bg-slate-900">
+              <div className="lg:col-span-7 h-72 lg:h-auto relative overflow-hidden bg-slate-100">
                 <img
                   src={featuredPost.image}
                   alt={featuredPost.title}
                   className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                 />
-                <div className="absolute top-4 left-4 bg-cyan-500/20 border border-cyan-400/40 text-cyan-300 text-xs font-mono px-3 py-1 rounded-full backdrop-blur-md">
+                <div className="absolute top-4 left-4 bg-sky-600 text-white text-xs font-mono px-3 py-1 rounded-full shadow-sm">
                   FEATURED ARTICLE
                 </div>
               </div>
 
               <div className="lg:col-span-5 p-8 flex flex-col justify-between">
                 <div>
-                  <div className="flex items-center gap-3 text-xs font-mono text-slate-400 mb-4">
-                    <span className="text-cyan-400">{featuredPost.category}</span>
+                  <div className="flex items-center gap-3 text-xs font-mono text-slate-500 mb-4">
+                    <span className="text-sky-700 font-semibold">{featuredPost.category}</span>
                     <span>•</span>
                     <span>{featuredPost.date}</span>
                   </div>
 
-                  <h2 className="font-display text-2xl sm:text-3xl font-bold text-white mb-4 group-hover:text-cyan-300 transition-colors leading-tight">
+                  <h2 className="font-display text-2xl sm:text-3xl font-bold text-slate-900 mb-4 group-hover:text-sky-700 transition-colors leading-tight">
                     {featuredPost.title}
                   </h2>
 
-                  <p className="text-slate-400 text-sm font-light leading-relaxed mb-6">
+                  <p className="text-slate-600 text-sm font-normal leading-relaxed mb-6">
                     {featuredPost.description}
                   </p>
                 </div>
 
-                <div className="inline-flex items-center gap-2 text-xs font-semibold text-cyan-400 group-hover:text-cyan-300">
+                <div className="inline-flex items-center gap-2 text-xs font-semibold text-sky-700 group-hover:text-sky-900">
                   Read Full Featured Article
                   <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
                 </div>
@@ -152,40 +152,40 @@ export default function BlogPage() {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.4, delay: idx * 0.05 }}
-                className="glass-card rounded-3xl overflow-hidden flex flex-col justify-between group hover:-translate-y-2 transition-all duration-300 border border-white/10"
+                className="corporate-card rounded-2xl overflow-hidden flex flex-col justify-between group border border-slate-200"
               >
                 <div>
-                  <div className="relative h-48 w-full overflow-hidden bg-slate-900">
+                  <div className="relative h-48 w-full overflow-hidden bg-slate-100">
                     <img
                       src={post.image}
                       alt={post.title}
                       className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                     />
-                    <div className="absolute top-4 left-4 bg-[#05060b]/80 backdrop-blur-md border border-cyan-500/30 text-cyan-400 text-[10px] font-mono px-3 py-1 rounded-full">
+                    <div className="absolute top-4 left-4 bg-white/90 border border-slate-200 text-slate-800 text-[10px] font-mono px-3 py-1 rounded-full shadow-sm">
                       {post.category}
                     </div>
                   </div>
 
                   <div className="p-6">
-                    <div className="flex items-center gap-2 text-[11px] font-mono text-slate-400 mb-3">
-                      <Calendar className="w-3.5 h-3.5 text-cyan-400" />
+                    <div className="flex items-center gap-2 text-[11px] font-mono text-slate-500 mb-3">
+                      <Calendar className="w-3.5 h-3.5 text-sky-600" />
                       <span>{post.date}</span>
                     </div>
 
-                    <h3 className="font-display text-lg font-bold text-white mb-3 group-hover:text-cyan-300 transition-colors leading-snug">
+                    <h3 className="font-display text-lg font-bold text-slate-900 mb-3 group-hover:text-sky-700 transition-colors leading-snug">
                       {post.title}
                     </h3>
 
-                    <p className="text-slate-400 text-xs font-light leading-relaxed line-clamp-2">
+                    <p className="text-slate-600 text-xs font-normal leading-relaxed line-clamp-2">
                       {post.description}
                     </p>
                   </div>
                 </div>
 
-                <div className="px-6 pb-6 pt-2 border-t border-white/5">
+                <div className="px-6 pb-6 pt-2 border-t border-slate-100">
                   <button
                     onClick={() => setActiveModalPost(post)}
-                    className="w-full text-left text-xs font-semibold text-cyan-400 hover:text-cyan-300 flex items-center justify-between group/btn"
+                    className="w-full text-left text-xs font-semibold text-sky-600 hover:text-sky-700 flex items-center justify-between group/btn"
                   >
                     <span>Read Article</span>
                     <ArrowRight className="w-4 h-4 group-hover/btn:translate-x-1 transition-transform" />

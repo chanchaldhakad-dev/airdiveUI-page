@@ -8,15 +8,16 @@ export default {
     extend: {
       colors: {
         airdive: {
-          bg: '#0b0f17',
-          surface: '#111726',
-          'surface-hover': '#172033',
-          border: 'rgba(255, 255, 255, 0.08)',
-          'border-hover': 'rgba(37, 99, 235, 0.4)',
-          blue: '#2563eb', // Sapphire Blue
-          'blue-light': '#60a5fa',
-          emerald: '#10b981',
-          slate: '#94a3b8',
+          bg: '#f8fafc',
+          surface: '#ffffff',
+          'surface-hover': '#f1f5f9',
+          border: '#e2e8f0',
+          'border-hover': '#93c5fd',
+          blue: '#0284c7', // Sky / Light Blue accent
+          'blue-dark': '#0369a1',
+          'blue-soft': '#e0f2fe',
+          navy: '#0f172a',
+          slate: '#475569',
           subtle: '#64748b'
         }
       },

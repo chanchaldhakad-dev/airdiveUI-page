@@ -70,30 +70,30 @@ export default function Navbar() {
     <header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-200 ${
         isScrolled
-          ? 'bg-[#0b0f17]/95 backdrop-blur-md border-b border-white/10 py-3 shadow-xl'
+          ? 'bg-white/95 backdrop-blur-md border-b border-slate-200 py-3 shadow-sm'
           : 'bg-transparent py-5'
       }`}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between">
         {/* Brand Logo */}
         <Link to="/" className="flex items-center gap-3 group focus:outline-none">
-          <div className="w-10 h-10 rounded-xl bg-blue-600/10 p-0.5 border border-blue-500/20 group-hover:border-blue-400 transition-all">
-            <div className="w-full h-full bg-[#0b0f17] rounded-[10px] flex items-center justify-center">
+          <div className="w-10 h-10 rounded-xl bg-sky-500/10 p-0.5 border border-sky-200 group-hover:border-sky-500 transition-all">
+            <div className="w-full h-full bg-white rounded-[10px] flex items-center justify-center shadow-sm">
               <img src="/logo.svg" alt="AirDive Logo" className="w-7 h-7 object-contain group-hover:scale-105 transition-transform" />
             </div>
           </div>
           <div className="flex flex-col">
-            <span className="font-display font-bold text-xl tracking-tight text-white group-hover:text-blue-400 transition-colors">
+            <span className="font-display font-bold text-xl tracking-tight text-slate-900 group-hover:text-sky-600 transition-colors">
               AIRDIVE
             </span>
-            <span className="text-[10px] tracking-widest text-slate-400 uppercase -mt-1 font-mono">
+            <span className="text-[10px] tracking-widest text-slate-500 uppercase -mt-1 font-mono">
               PRIVATE LIMITED
             </span>
           </div>
         </Link>
 
         {/* Desktop Navigation Menu */}
-        <nav className="hidden lg:flex items-center gap-1 bg-[#111726]/80 p-1.5 rounded-full border border-white/10 backdrop-blur-md">
+        <nav className="hidden lg:flex items-center gap-1 bg-slate-100/90 p-1.5 rounded-full border border-slate-200/80 backdrop-blur-md">
           {NAV_ITEMS.map((item) => {
             const isActive = item.isRoute
               ? location.pathname === item.href
@@ -106,8 +106,8 @@ export default function Navbar() {
                   to={item.href}
                   className={`px-4 py-1.5 rounded-full text-xs font-medium tracking-wide transition-all ${
                     isActive
-                      ? 'bg-blue-600 text-white font-semibold shadow-sm'
-                      : 'text-slate-300 hover:text-white hover:bg-white/5'
+                      ? 'bg-sky-600 text-white font-semibold shadow-sm'
+                      : 'text-slate-600 hover:text-slate-900 hover:bg-slate-200/60'
                   }`}
                 >
                   {item.label}
@@ -122,8 +122,8 @@ export default function Navbar() {
                 onClick={(e) => handleNavClick(e, item)}
                 className={`px-4 py-1.5 rounded-full text-xs font-medium tracking-wide transition-all ${
                   isActive
-                    ? 'bg-blue-600 text-white font-semibold shadow-sm'
-                    : 'text-slate-300 hover:text-white hover:bg-white/5'
+                    ? 'bg-sky-600 text-white font-semibold shadow-sm'
+                    : 'text-slate-600 hover:text-slate-900 hover:bg-slate-200/60'
                 }`}
               >
                 {item.label}
@@ -137,7 +137,7 @@ export default function Navbar() {
           <a
             href="#contact"
             onClick={(e) => handleNavClick(e, { href: '#contact' })}
-            className="inline-flex items-center justify-center px-5 py-2 text-xs font-semibold tracking-wide text-white bg-blue-600 hover:bg-blue-500 rounded-lg shadow-md transition-all"
+            className="inline-flex items-center justify-center px-5 py-2.5 text-xs font-semibold tracking-wide text-white bg-sky-600 hover:bg-sky-700 rounded-lg shadow-sm hover:shadow transition-all"
           >
             <span className="flex items-center gap-1.5">
               Contact Us
@@ -150,7 +150,7 @@ export default function Navbar() {
         <div className="flex lg:hidden items-center">
           <button
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-            className="p-2 rounded-lg bg-white/5 border border-white/10 text-slate-300 hover:text-white focus:outline-none"
+            className="p-2 rounded-lg bg-slate-100 border border-slate-200 text-slate-700 hover:text-slate-900 focus:outline-none"
             aria-label="Toggle menu"
           >
             {mobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
@@ -160,7 +160,7 @@ export default function Navbar() {
 
       {/* Mobile Drawer Menu */}
       {mobileMenuOpen && (
-        <div className="lg:hidden bg-[#0b0f17]/95 backdrop-blur-xl border-b border-white/10 px-4 pt-4 pb-6 mt-2 space-y-2 shadow-2xl">
+        <div className="lg:hidden bg-white/95 backdrop-blur-xl border-b border-slate-200 px-4 pt-4 pb-6 mt-2 space-y-2 shadow-xl">
           {NAV_ITEMS.map((item) => {
             if (item.isRoute) {
               return (
@@ -168,7 +168,7 @@ export default function Navbar() {
                   key={item.label}
                   to={item.href}
                   onClick={() => setMobileMenuOpen(false)}
-                  className="block px-4 py-2.5 rounded-xl text-sm font-medium text-slate-200 hover:bg-white/10 hover:text-blue-400 transition-colors"
+                  className="block px-4 py-2.5 rounded-xl text-sm font-medium text-slate-700 hover:bg-slate-100 hover:text-sky-600 transition-colors"
                 >
                   {item.label}
                 </Link>
@@ -179,7 +179,7 @@ export default function Navbar() {
                 key={item.label}
                 href={item.href}
                 onClick={(e) => handleNavClick(e, item)}
-                className="block px-4 py-2.5 rounded-xl text-sm font-medium text-slate-200 hover:bg-white/10 hover:text-blue-400 transition-colors"
+                className="block px-4 py-2.5 rounded-xl text-sm font-medium text-slate-700 hover:bg-slate-100 hover:text-sky-600 transition-colors"
               >
                 {item.label}
               </a>
@@ -189,7 +189,7 @@ export default function Navbar() {
             <a
               href="#contact"
               onClick={(e) => handleNavClick(e, { href: '#contact' })}
-              className="block w-full text-center py-3 rounded-xl text-sm font-bold text-white bg-blue-600 shadow-md"
+              className="block w-full text-center py-3 rounded-xl text-sm font-bold text-white bg-sky-600 shadow-sm"
             >
               Contact Us
             </a>
