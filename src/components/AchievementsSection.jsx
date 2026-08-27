@@ -5,7 +5,7 @@ import { Award, Layers, Users, Zap } from 'lucide-react';
 
 const ICONS = [Layers, Users, Zap, Award];
 
-function AnimatedCounter({ targetNumber, suffix, duration = 2 }) {
+function AnimatedCounter({ targetNumber, suffix, duration = 1.8 }) {
   const [count, setCount] = useState(0);
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: '-50px' });
@@ -43,7 +43,7 @@ function AnimatedCounter({ targetNumber, suffix, duration = 2 }) {
 
 export default function AchievementsSection() {
   return (
-    <section className="relative py-20 bg-[#05060b] border-b border-white/5 overflow-hidden">
+    <section className="relative py-20 bg-[#0a0b10] border-b border-white/10">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         
         <div className="grid grid-cols-2 lg:grid-cols-4 gap-6">
@@ -53,14 +53,14 @@ export default function AchievementsSection() {
             return (
               <motion.div
                 key={item.label}
-                initial={{ opacity: 0, y: 20 }}
+                initial={{ opacity: 0, y: 15 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: idx * 0.1 }}
-                className="glass-card p-6 sm:p-8 rounded-3xl text-center flex flex-col items-center justify-center hover:scale-105 transition-all duration-300 border border-white/10"
+                transition={{ duration: 0.4, delay: idx * 0.08 }}
+                className="natural-card p-6 sm:p-8 rounded-2xl text-center flex flex-col items-center justify-center border border-white/10"
               >
-                <div className="p-3 rounded-2xl bg-cyan-500/10 border border-cyan-500/20 text-cyan-400 mb-4">
-                  <IconComp className="w-6 h-6" />
+                <div className="p-3 rounded-xl bg-white/5 border border-white/10 text-sky-400 mb-4">
+                  <IconComp className="w-5 h-5" />
                 </div>
 
                 <div className="font-display text-4xl sm:text-5xl font-extrabold text-white tracking-tight mb-2">

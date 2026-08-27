@@ -9,100 +9,68 @@
   }
   
   body {
-    background-color: #05060b;
+    background-color: #0a0b10;
     color: #f1f5f9;
     font-family: 'Inter', sans-serif;
     overflow-x: hidden;
+    letter-spacing: -0.01em;
   }
 
   h1, h2, h3, h4, h5, h6 {
     font-family: 'Space Grotesk', sans-serif;
+    letter-spacing: -0.02em;
   }
 }
 
-/* Custom Scrollbar */
+/* Custom Subtle Scrollbar */
 ::-webkit-scrollbar {
-  width: 8px;
+  width: 6px;
 }
 
 ::-webkit-scrollbar-track {
-  background: #05060b;
+  background: #0a0b10;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #1e293b;
-  border-radius: 4px;
+  background: #272a38;
+  border-radius: 3px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #00d2ef;
+  background: #38bdf8;
 }
 
-/* Glassmorphism utility */
-.glass-panel {
-  background: rgba(9, 11, 17, 0.7);
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
+/* Clean Natural Agency Card Style */
+.natural-card {
+  background: #11131c;
   border: 1px solid rgba(255, 255, 255, 0.08);
+  transition: all 0.25s ease-out;
 }
 
-.glass-card {
-  background: rgba(13, 16, 26, 0.6);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-  border: 1px solid rgba(255, 255, 255, 0.07);
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+.natural-card:hover {
+  background: #161925;
+  border-color: rgba(56, 189, 248, 0.3);
+  transform: translateY(-2px);
+  box-shadow: 0 12px 32px -8px rgba(0, 0, 0, 0.5);
 }
 
-.glass-card:hover {
-  background: rgba(18, 22, 36, 0.8);
-  border-color: rgba(0, 210, 239, 0.3);
-  box-shadow: 0 10px 30px -10px rgba(0, 210, 239, 0.15);
+/* Subtle Grid Background Pattern */
+.bg-grid-pattern {
+  background-size: 32px 32px;
+  background-image: 
+    linear-gradient(to right, rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
 }
 
-/* Text Gradient Utilities */
-.text-gradient-cyan {
-  background: linear-gradient(135deg, #ffffff 0%, #00d2ef 100%);
+/* Natural Gradient Text */
+.text-gradient-natural {
+  background: linear-gradient(135deg, #ffffff 30%, #94a3b8 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 
-.text-gradient-emerald {
-  background: linear-gradient(135deg, #ffffff 0%, #10b981 100%);
+.text-gradient-sky {
+  background: linear-gradient(135deg, #ffffff 20%, #38bdf8 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-}
-
-.text-gradient-purple {
-  background: linear-gradient(135deg, #ffffff 0%, #a855f7 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-}
-
-/* Glowing Border effect */
-.glow-border {
-  position: relative;
-}
-
-.glow-border::after {
-  content: '';
-  position: absolute;
-  inset: -1px;
-  background: linear-gradient(90deg, #00d2ef, #10b981, #a855f7, #00d2ef);
-  border-radius: inherit;
-  z-index: -1;
-  opacity: 0;
-  transition: opacity 0.4s ease;
-  background-size: 300% 300%;
-  animation: borderGlow 6s ease infinite;
-}
-
-.glow-border:hover::after {
-  opacity: 0.6;
-}
-
-@keyframes borderGlow {
-  0% { background-position: 0% 50%; }
-  50% { background-position: 100% 50%; }
-  100% { background-position: 0% 50%; }
 }
