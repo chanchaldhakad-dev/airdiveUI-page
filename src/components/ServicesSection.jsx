@@ -1,7 +1,7 @@
-import React, { useRef } from 'react';
+import React from 'react';
 import { motion } from 'framer-motion';
 import { SERVICES } from '../data/airdiveData';
-import { Globe, Smartphone, Layout, BrainCircuit, Code2, Glasses, ArrowLeft, ArrowRight } from 'lucide-react';
+import { Globe, Smartphone, Layout, BrainCircuit, Code2, Cloud, ArrowRight, CheckCircle2 } from 'lucide-react';
 
 const ICON_MAP = {
   Globe,
@@ -9,98 +9,74 @@ const ICON_MAP = {
   Layout,
   BrainCircuit,
   Code2,
-  Glasses
+  Cloud
 };
 
 export default function ServicesSection() {
-  const scrollRef = useRef(null);
-
-  const scroll = (direction) => {
-    if (scrollRef.current) {
-      const { scrollLeft, clientWidth } = scrollRef.current;
-      const scrollAmount = clientWidth * 0.75;
-      scrollRef.current.scrollTo({
-        left: direction === 'left' ? scrollLeft - scrollAmount : scrollLeft + scrollAmount,
-        behavior: 'smooth'
-      });
-    }
-  };
-
   return (
-    <section id="services" className="relative py-28 bg-[#0a0b10] border-b border-white/10">
+    <section id="services" className="relative py-28 bg-[#0b0f17] border-b border-white/10">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         
-        {/* Header & Controls */}
-        <div className="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-6">
-          <div>
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/5 border border-white/10 text-slate-300 text-xs font-mono mb-4">
-              <span>OUR SERVICES</span>
-            </div>
-            <h2 className="font-display text-3xl sm:text-5xl font-bold tracking-tight text-white">
-              Software & Technology <span className="text-gradient-sky">Services</span>
-            </h2>
+        {/* Header */}
+        <div className="text-center max-w-3xl mx-auto mb-20">
+          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-950/40 border border-blue-500/30 text-blue-400 text-xs font-mono mb-4">
+            <span>SERVICE PORTFOLIO</span>
           </div>
-
-          {/* Controls */}
-          <div className="hidden md:flex items-center gap-3">
-            <button
-              onClick={() => scroll('left')}
-              className="p-3 rounded-full bg-white/5 hover:bg-white/10 border border-white/10 text-slate-300 hover:text-white transition-all active:scale-95"
-              aria-label="Scroll left"
-            >
-              <ArrowLeft className="w-5 h-5" />
-            </button>
-            <button
-              onClick={() => scroll('right')}
-              className="p-3 rounded-full bg-white/5 hover:bg-white/10 border border-white/10 text-slate-300 hover:text-white transition-all active:scale-95"
-              aria-label="Scroll right"
-            >
-              <ArrowRight className="w-5 h-5" />
-            </button>
-          </div>
+          <h2 className="font-display text-3xl sm:text-5xl font-bold tracking-tight text-white mb-4">
+            Enterprise IT & <span className="text-gradient-corporate">Software Services</span>
+          </h2>
+          <p className="text-slate-400 text-sm sm:text-base font-light">
+            End-to-end technology solutions engineered for reliability, security, and measurable enterprise value.
+          </p>
         </div>
 
-        {/* Horizontal Card Carousel */}
-        <div
-          ref={scrollRef}
-          className="flex gap-6 overflow-x-auto snap-x snap-mandatory pb-8 pt-2 -mx-4 px-4 sm:-mx-6 sm:px-6 lg:-mx-8 lg:px-8"
-          style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
-        >
+        {/* 6 Services Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {SERVICES.map((service, index) => {
             const IconComponent = ICON_MAP[service.icon] || Code2;
 
             return (
               <motion.div
                 key={service.id}
-                initial={{ opacity: 0, x: 30 }}
-                whileInView={{ opacity: 1, x: 0 }}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.4, delay: index * 0.06 }}
-                className="snap-start flex-shrink-0 w-[280px] sm:w-[350px] natural-card p-8 rounded-2xl flex flex-col justify-between group"
+                className="corporate-card p-8 rounded-2xl flex flex-col justify-between group"
               >
                 <div>
-                  <div className="w-12 h-12 rounded-xl bg-white/5 border border-white/10 text-sky-400 flex items-center justify-center mb-6 group-hover:scale-105 transition-transform">
+                  <div className="w-12 h-12 rounded-xl bg-blue-600/10 border border-blue-500/20 text-blue-400 flex items-center justify-center mb-6 group-hover:scale-105 transition-transform">
                     <IconComponent className="w-6 h-6" />
                   </div>
 
-                  <h3 className="font-display text-xl font-bold text-white mb-3 group-hover:text-sky-300 transition-colors">
+                  <h3 className="font-display text-xl font-bold text-white mb-3 group-hover:text-blue-300 transition-colors">
                     {service.name}
                   </h3>
 
-                  <p className="text-slate-400 text-xs sm:text-sm leading-relaxed font-light">
+                  <p className="text-slate-400 text-xs sm:text-sm leading-relaxed font-light mb-6">
                     {service.description}
                   </p>
+
+                  {/* Bulleted Deliverables */}
+                  <div className="space-y-2 pt-4 border-t border-white/5 mb-6">
+                    {service.deliverables.map((del, dIdx) => (
+                      <div key={dIdx} className="flex items-center gap-2 text-xs text-slate-300">
+                        <CheckCircle2 className="w-3.5 h-3.5 text-blue-400 flex-shrink-0" />
+                        <span>{del}</span>
+                      </div>
+                    ))}
+                  </div>
                 </div>
 
-                <div className="mt-8 pt-4 border-t border-white/5 flex items-center justify-between">
+                <div className="pt-4 border-t border-white/5 flex items-center justify-between">
                   <span className="text-[10px] font-mono text-slate-500 uppercase">
                     Service 0{index + 1}
                   </span>
                   <a
                     href="#contact"
-                    className="text-xs font-semibold text-sky-400 hover:text-sky-300 flex items-center gap-1"
+                    className="text-xs font-semibold text-blue-400 hover:text-blue-300 flex items-center gap-1"
                   >
-                    Inquire
+                    Request Technical Proposal
                     <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform" />
                   </a>
                 </div>

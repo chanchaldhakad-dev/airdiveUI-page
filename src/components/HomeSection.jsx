@@ -1,15 +1,15 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { ArrowUpRight, Cpu, Shield, Globe } from 'lucide-react';
+import { ArrowRight, Server, ShieldCheck, Cpu } from 'lucide-react';
 import { COMPANY_INFO } from '../data/airdiveData';
 
 export default function HomeSection() {
   return (
-    <section id="home" className="relative py-24 bg-[#0a0b10] border-b border-white/10">
+    <section id="home" className="relative py-24 bg-[#0b0f17] border-b border-white/10">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
           
-          {/* Left Column: Heading & Copy */}
+          {/* Left Column: Heading & Executive Summary */}
           <motion.div
             initial={{ opacity: 0, x: -20 }}
             whileInView={{ opacity: 1, x: 0 }}
@@ -17,8 +17,8 @@ export default function HomeSection() {
             transition={{ duration: 0.5 }}
             className="lg:col-span-7 flex flex-col items-start"
           >
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/5 border border-white/10 text-slate-300 text-xs font-mono mb-4">
-              <span>ABOUT AIRDIVE</span>
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-950/40 border border-blue-500/30 text-blue-400 text-xs font-mono mb-4">
+              <span>COMPANY OVERVIEW</span>
             </div>
 
             <h2 className="font-display text-3xl sm:text-5xl font-bold tracking-tight text-white leading-tight mb-6">
@@ -26,28 +26,28 @@ export default function HomeSection() {
             </h2>
 
             <p className="text-slate-300 text-base sm:text-lg font-light leading-relaxed mb-8 max-w-xl">
-              We work closely with companies and founders to plan, build, and deploy production-grade software applications, mobile experiences, and secure cloud backends.
+              AIRDIVE PRIVATE LIMITED partners with growing businesses and global enterprises to architect, engineer, and deploy mission-critical web applications, mobile platforms, and high-frequency backend API infrastructures.
             </p>
 
             <div className="flex flex-wrap items-center gap-4">
               <a
                 href="#services"
-                className="group inline-flex items-center gap-2 px-6 py-3 rounded-full text-xs font-semibold text-[#0a0b10] bg-sky-400 hover:bg-sky-300 transition-all duration-200"
+                className="inline-flex items-center gap-2 px-6 py-3 rounded-lg text-xs font-semibold tracking-wide text-white bg-blue-600 hover:bg-blue-500 shadow-md transition-all"
               >
-                Our Core Services
-                <ArrowUpRight className="w-4 h-4 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
+                Our Service Portfolio
+                <ArrowRight className="w-4 h-4" />
               </a>
 
               <a
                 href="#process"
-                className="inline-flex items-center gap-2 px-6 py-3 rounded-full text-xs font-medium text-slate-300 hover:text-white bg-white/5 border border-white/10 hover:bg-white/10 transition-all duration-200"
+                className="inline-flex items-center gap-2 px-6 py-3 rounded-lg text-xs font-medium tracking-wide text-slate-300 hover:text-white bg-white/5 border border-white/10 hover:bg-white/10 transition-colors"
               >
-                How We Work
+                Delivery Methodology
               </a>
             </div>
           </motion.div>
 
-          {/* Right Column: Visual Highlight Cards */}
+          {/* Right Column: Engineering Pillars */}
           <motion.div
             initial={{ opacity: 0, x: 20 }}
             whileInView={{ opacity: 1, x: 0 }}
@@ -55,33 +55,33 @@ export default function HomeSection() {
             transition={{ duration: 0.5, delay: 0.1 }}
             className="lg:col-span-5 grid grid-cols-1 gap-4"
           >
-            <div className="natural-card p-6 rounded-2xl flex items-start gap-4">
-              <div className="p-3 rounded-xl bg-white/5 border border-white/10 text-sky-400">
+            <div className="corporate-card p-6 rounded-2xl flex items-start gap-4">
+              <div className="p-3 rounded-xl bg-blue-600/10 border border-blue-500/20 text-blue-400">
+                <Server className="w-6 h-6" />
+              </div>
+              <div>
+                <h4 className="font-display font-semibold text-white text-base mb-1">High-Throughput Architectures</h4>
+                <p className="text-slate-400 text-xs leading-relaxed">Microservices engineered for high concurrency, low latency, and continuous uptime.</p>
+              </div>
+            </div>
+
+            <div className="corporate-card p-6 rounded-2xl flex items-start gap-4">
+              <div className="p-3 rounded-xl bg-emerald-600/10 border border-emerald-500/20 text-emerald-400">
+                <ShieldCheck className="w-6 h-6" />
+              </div>
+              <div>
+                <h4 className="font-display font-semibold text-white text-base mb-1">Security & SOC-2 Compliance</h4>
+                <p className="text-slate-400 text-xs leading-relaxed">Encrypted data layers, role-based access control, and continuous vulnerability monitoring.</p>
+              </div>
+            </div>
+
+            <div className="corporate-card p-6 rounded-2xl flex items-start gap-4">
+              <div className="p-3 rounded-xl bg-purple-600/10 border border-purple-500/20 text-purple-400">
                 <Cpu className="w-6 h-6" />
               </div>
               <div>
-                <h4 className="font-display font-semibold text-white text-base mb-1">Fast & Reliable Backends</h4>
-                <p className="text-slate-400 text-xs leading-relaxed">Clean RESTful and GraphQL APIs engineered for fast query speeds and smooth data syncing.</p>
-              </div>
-            </div>
-
-            <div className="natural-card p-6 rounded-2xl flex items-start gap-4">
-              <div className="p-3 rounded-xl bg-white/5 border border-white/10 text-emerald-400">
-                <Shield className="w-6 h-6" />
-              </div>
-              <div>
-                <h4 className="font-display font-semibold text-white text-base mb-1">Security & Best Practices</h4>
-                <p className="text-slate-400 text-xs leading-relaxed">Encrypted data layers, role-based user authentication, and regular automated backups.</p>
-              </div>
-            </div>
-
-            <div className="natural-card p-6 rounded-2xl flex items-start gap-4">
-              <div className="p-3 rounded-xl bg-white/5 border border-white/10 text-purple-400">
-                <Globe className="w-6 h-6" />
-              </div>
-              <div>
-                <h4 className="font-display font-semibold text-white text-base mb-1">Modern Web & Mobile Stack</h4>
-                <p className="text-slate-400 text-xs leading-relaxed">Building with React, Next.js, Node.js, Python, and cross-platform mobile frameworks.</p>
+                <h4 className="font-display font-semibold text-white text-base mb-1">Full-Stack Technology Suite</h4>
+                <p className="text-slate-400 text-xs leading-relaxed">Mastery across React, Node.js, Python, AWS/GCP, Docker, and Mobile App stacks.</p>
               </div>
             </div>
           </motion.div>

@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { COMPANY_INFO, SERVICES } from '../data/airdiveData';
-import { Twitter, Github, Linkedin, Mail, Phone, MapPin, ArrowUp } from 'lucide-react';
+import { Twitter, Github, Linkedin, Mail, Phone, MapPin, ArrowUp, ShieldCheck } from 'lucide-react';
 
 export default function Footer() {
   const scrollToTop = () => {
@@ -9,16 +9,16 @@ export default function Footer() {
   };
 
   return (
-    <footer className="bg-[#07080d] text-slate-400 border-t border-white/10 pt-16 pb-12 relative overflow-hidden">
+    <footer className="bg-[#070a10] text-slate-400 border-t border-white/10 pt-16 pb-12 relative overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-12 mb-16">
           
-          {/* Col 1: Brand & Description */}
+          {/* Col 1: Corporate Summary */}
           <div className="lg:col-span-4 space-y-4">
             <Link to="/" className="flex items-center gap-3 group focus:outline-none">
-              <div className="w-9 h-9 rounded-xl bg-white/5 p-0.5 border border-white/10">
-                <div className="w-full h-full bg-[#0a0b10] rounded-[10px] flex items-center justify-center">
+              <div className="w-9 h-9 rounded-xl bg-blue-600/10 p-0.5 border border-blue-500/20">
+                <div className="w-full h-full bg-[#0b0f17] rounded-[10px] flex items-center justify-center">
                   <img src="/logo.svg" alt="AirDive Logo" className="w-6 h-6 object-contain" />
                 </div>
               </div>
@@ -29,7 +29,7 @@ export default function Footer() {
             </Link>
 
             <p className="text-xs text-slate-400 font-light leading-relaxed max-w-sm">
-              Custom software engineering, mobile application development, UI/UX design, and cloud solutions for modern companies.
+              AIRDIVE PRIVATE LIMITED is a global enterprise software and technology engineering partner building high-availability web platforms, mobile apps, and cloud backend systems.
             </p>
 
             <div className="flex items-center gap-3 pt-2">
@@ -37,7 +37,7 @@ export default function Footer() {
                 href={COMPANY_INFO.socials.twitter}
                 target="_blank"
                 rel="noreferrer"
-                className="p-2.5 rounded-full bg-white/5 border border-white/10 text-slate-400 hover:text-sky-400 hover:bg-white/10 transition-colors"
+                className="p-2.5 rounded-full bg-white/5 border border-white/10 text-slate-400 hover:text-blue-400 hover:bg-white/10 transition-colors"
                 aria-label="Twitter / X"
               >
                 <Twitter className="w-4 h-4" />
@@ -46,7 +46,7 @@ export default function Footer() {
                 href={COMPANY_INFO.socials.github}
                 target="_blank"
                 rel="noreferrer"
-                className="p-2.5 rounded-full bg-white/5 border border-white/10 text-slate-400 hover:text-sky-400 hover:bg-white/10 transition-colors"
+                className="p-2.5 rounded-full bg-white/5 border border-white/10 text-slate-400 hover:text-blue-400 hover:bg-white/10 transition-colors"
                 aria-label="GitHub"
               >
                 <Github className="w-4 h-4" />
@@ -55,7 +55,7 @@ export default function Footer() {
                 href={COMPANY_INFO.socials.linkedin}
                 target="_blank"
                 rel="noreferrer"
-                className="p-2.5 rounded-full bg-white/5 border border-white/10 text-slate-400 hover:text-sky-400 hover:bg-white/10 transition-colors"
+                className="p-2.5 rounded-full bg-white/5 border border-white/10 text-slate-400 hover:text-blue-400 hover:bg-white/10 transition-colors"
                 aria-label="LinkedIn"
               >
                 <Linkedin className="w-4 h-4" />
@@ -67,15 +67,15 @@ export default function Footer() {
           <div className="lg:col-span-2 space-y-3">
             <h4 className="font-display text-xs font-mono tracking-widest text-white uppercase">Navigation</h4>
             <ul className="space-y-2 text-xs">
-              <li><a href="#home" className="hover:text-sky-400 transition-colors">Home</a></li>
-              <li><a href="#process" className="hover:text-sky-400 transition-colors">Process</a></li>
-              <li><a href="#features" className="hover:text-sky-400 transition-colors">Features</a></li>
-              <li><a href="#services" className="hover:text-sky-400 transition-colors">Services</a></li>
-              <li><Link to="/blog" className="hover:text-sky-400 transition-colors">Blog</Link></li>
-              <li><a href="#clients" className="hover:text-sky-400 transition-colors">Clients</a></li>
-              <li><a href="#team" className="hover:text-sky-400 transition-colors">Our Team</a></li>
-              <li><a href="#faq" className="hover:text-sky-400 transition-colors">FAQ</a></li>
-              <li><a href="#contact" className="hover:text-sky-400 transition-colors">Contact</a></li>
+              <li><a href="#home" className="hover:text-blue-400 transition-colors">Overview</a></li>
+              <li><a href="#process" className="hover:text-blue-400 transition-colors">Methodology</a></li>
+              <li><a href="#features" className="hover:text-blue-400 transition-colors">Capabilities</a></li>
+              <li><a href="#services" className="hover:text-blue-400 transition-colors">Services</a></li>
+              <li><Link to="/blog" className="hover:text-blue-400 transition-colors">Publications</Link></li>
+              <li><a href="#clients" className="hover:text-blue-400 transition-colors">Domains</a></li>
+              <li><a href="#team" className="hover:text-blue-400 transition-colors">Leadership</a></li>
+              <li><a href="#faq" className="hover:text-blue-400 transition-colors">FAQ</a></li>
+              <li><a href="#contact" className="hover:text-blue-400 transition-colors">Contact</a></li>
             </ul>
           </div>
 
@@ -85,8 +85,8 @@ export default function Footer() {
             <ul className="space-y-2 text-xs">
               {SERVICES.map((s) => (
                 <li key={s.id}>
-                  <a href="#services" className="hover:text-sky-400 transition-colors flex items-center gap-1.5">
-                    <span className="w-1 h-1 rounded-full bg-sky-400" />
+                  <a href="#services" className="hover:text-blue-400 transition-colors flex items-center gap-1.5">
+                    <span className="w-1 h-1 rounded-full bg-blue-500" />
                     {s.name}
                   </a>
                 </li>
@@ -94,13 +94,13 @@ export default function Footer() {
             </ul>
           </div>
 
-          {/* Col 4: Contact & Office */}
+          {/* Col 4: Corporate Office */}
           <div className="lg:col-span-3 space-y-3">
-            <h4 className="font-display text-xs font-mono tracking-widest text-white uppercase">Contact Us</h4>
+            <h4 className="font-display text-xs font-mono tracking-widest text-white uppercase">Corporate HQ</h4>
             <div className="space-y-2 text-xs text-slate-400">
               <p className="flex items-center gap-2">
-                <Mail className="w-3.5 h-3.5 text-sky-400 flex-shrink-0" />
-                <a href={`mailto:${COMPANY_INFO.email}`} className="hover:text-sky-400 transition-colors">{COMPANY_INFO.email}</a>
+                <Mail className="w-3.5 h-3.5 text-blue-400 flex-shrink-0" />
+                <a href={`mailto:${COMPANY_INFO.email}`} className="hover:text-blue-400 transition-colors">{COMPANY_INFO.email}</a>
               </p>
               <p className="flex items-start gap-2">
                 <Phone className="w-3.5 h-3.5 text-emerald-400 flex-shrink-0 mt-0.5" />
@@ -121,7 +121,7 @@ export default function Footer() {
           <div className="flex items-center gap-6">
             <button
               onClick={scrollToTop}
-              className="inline-flex items-center gap-1.5 text-slate-400 hover:text-sky-400 transition-colors"
+              className="inline-flex items-center gap-1.5 text-slate-400 hover:text-blue-400 transition-colors"
             >
               <span>Back to Top</span>
               <ArrowUp className="w-3.5 h-3.5" />

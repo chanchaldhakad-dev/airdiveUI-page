@@ -1,9 +1,9 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { motion, useInView } from 'framer-motion';
 import { ACHIEVEMENTS } from '../data/airdiveData';
-import { Award, Layers, Users, Zap } from 'lucide-react';
+import { Award, Layers, Users, ShieldCheck } from 'lucide-react';
 
-const ICONS = [Layers, Users, Zap, Award];
+const ICONS = [Layers, Users, Award, ShieldCheck];
 
 function AnimatedCounter({ targetNumber, suffix, duration = 1.8 }) {
   const [count, setCount] = useState(0);
@@ -43,7 +43,7 @@ function AnimatedCounter({ targetNumber, suffix, duration = 1.8 }) {
 
 export default function AchievementsSection() {
   return (
-    <section className="relative py-20 bg-[#0a0b10] border-b border-white/10">
+    <section className="relative py-20 bg-[#0b0f17] border-b border-white/10">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         
         <div className="grid grid-cols-2 lg:grid-cols-4 gap-6">
@@ -57,9 +57,9 @@ export default function AchievementsSection() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.4, delay: idx * 0.08 }}
-                className="natural-card p-6 sm:p-8 rounded-2xl text-center flex flex-col items-center justify-center border border-white/10"
+                className="corporate-card p-6 sm:p-8 rounded-2xl text-center flex flex-col items-center justify-center border border-white/10"
               >
-                <div className="p-3 rounded-xl bg-white/5 border border-white/10 text-sky-400 mb-4">
+                <div className="p-3 rounded-xl bg-blue-600/10 border border-blue-500/20 text-blue-400 mb-4">
                   <IconComp className="w-5 h-5" />
                 </div>
 

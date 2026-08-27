@@ -8,31 +8,22 @@ export default {
     extend: {
       colors: {
         airdive: {
-          bg: '#0a0b10',
-          card: '#12141d',
-          'card-hover': '#181b27',
+          bg: '#0b0f17',
+          surface: '#111726',
+          'surface-hover': '#172033',
           border: 'rgba(255, 255, 255, 0.08)',
-          'border-light': 'rgba(255, 255, 255, 0.14)',
-          accent: '#38bdf8', // Ice blue / sky blue
-          emerald: '#34d399',
-          purple: '#c084fc',
-          muted: '#94a3b8',
+          'border-hover': 'rgba(37, 99, 235, 0.4)',
+          blue: '#2563eb', // Sapphire Blue
+          'blue-light': '#60a5fa',
+          emerald: '#10b981',
+          slate: '#94a3b8',
           subtle: '#64748b'
         }
       },
       fontFamily: {
         sans: ['Inter', '-apple-system', 'BlinkMacSystemFont', 'sans-serif'],
         display: ['Space Grotesk', 'Inter', 'sans-serif'],
-        mono: ['JetBrains Mono', 'monospace'],
-      },
-      animation: {
-        'subtle-pulse': 'subtlePulse 4s ease-in-out infinite',
-      },
-      keyframes: {
-        subtlePulse: {
-          '0%, 100%': { opacity: 0.4 },
-          '50%': { opacity: 0.8 },
-        }
+        mono: ['JetBrains Mono', 'Fira Code', 'monospace'],
       }
     },
   },

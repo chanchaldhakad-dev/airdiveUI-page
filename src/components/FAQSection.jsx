@@ -11,17 +11,17 @@ export default function FAQSection() {
   };
 
   return (
-    <section id="faq" className="relative py-28 bg-[#0a0b10] border-b border-white/10">
+    <section id="faq" className="relative py-28 bg-[#0b0f17] border-b border-white/10">
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         
         {/* Header */}
         <div className="text-center max-w-2xl mx-auto mb-16">
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/5 border border-white/10 text-slate-300 text-xs font-mono mb-4">
+          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-950/40 border border-blue-500/30 text-blue-400 text-xs font-mono mb-4">
             <HelpCircle className="w-3.5 h-3.5" />
             <span>FREQUENTLY ASKED QUESTIONS</span>
           </div>
           <h2 className="font-display text-3xl sm:text-5xl font-bold tracking-tight text-white">
-            Everything You <span className="text-gradient-sky">Need to Know</span>
+            Enterprise <span className="text-gradient-corporate">FAQ & Engagement</span>
           </h2>
         </div>
 
@@ -37,8 +37,8 @@ export default function FAQSection() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.3, delay: idx * 0.05 }}
-                className={`natural-card rounded-2xl overflow-hidden border transition-all duration-200 ${
-                  isOpen ? 'border-sky-400/50 bg-[#141724]' : 'border-white/10'
+                className={`corporate-card rounded-2xl overflow-hidden border transition-all duration-200 ${
+                  isOpen ? 'border-blue-500/50 bg-[#162034]' : 'border-white/10'
                 }`}
               >
                 {/* Question Trigger */}
@@ -50,7 +50,7 @@ export default function FAQSection() {
                     {faq.question}
                   </span>
                   <div className={`w-7 h-7 rounded-full flex items-center justify-center transition-all ${
-                    isOpen ? 'bg-sky-400/20 text-sky-400 rotate-180' : 'bg-white/5 text-slate-500'
+                    isOpen ? 'bg-blue-600/30 text-blue-400 rotate-180' : 'bg-white/5 text-slate-500'
                   }`}>
                     {isOpen ? <Minus className="w-4 h-4" /> : <Plus className="w-4 h-4" />}
                   </div>

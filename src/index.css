@@ -9,68 +9,71 @@
   }
   
   body {
-    background-color: #0a0b10;
+    background-color: #0b0f17;
     color: #f1f5f9;
-    font-family: 'Inter', sans-serif;
+    font-family: 'Inter', -apple-system, sans-serif;
     overflow-x: hidden;
     letter-spacing: -0.01em;
   }
 
   h1, h2, h3, h4, h5, h6 {
     font-family: 'Space Grotesk', sans-serif;
-    letter-spacing: -0.02em;
+    letter-spacing: -0.025em;
   }
 }
 
-/* Custom Subtle Scrollbar */
+/* Professional Corporate Scrollbar */
 ::-webkit-scrollbar {
   width: 6px;
 }
 
 ::-webkit-scrollbar-track {
-  background: #0a0b10;
+  background: #0b0f17;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #272a38;
+  background: #1e293b;
   border-radius: 3px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #38bdf8;
+  background: #2563eb;
 }
 
-/* Clean Natural Agency Card Style */
-.natural-card {
-  background: #11131c;
+/* Professional Enterprise Card Styling */
+.corporate-card {
+  background: #111726;
   border: 1px solid rgba(255, 255, 255, 0.08);
-  transition: all 0.25s ease-out;
+  border-radius: 16px;
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-.natural-card:hover {
-  background: #161925;
-  border-color: rgba(56, 189, 248, 0.3);
+.corporate-card:hover {
+  background: #151d30;
+  border-color: rgba(37, 99, 235, 0.4);
   transform: translateY(-2px);
-  box-shadow: 0 12px 32px -8px rgba(0, 0, 0, 0.5);
+  box-shadow: 0 12px 30px -10px rgba(0, 0, 0, 0.6);
+}
+
+/* Code Terminal Window Style */
+.terminal-window {
+  background: #080b11;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+  box-shadow: 0 20px 40px -15px rgba(0, 0, 0, 0.7);
 }
 
 /* Subtle Grid Background Pattern */
-.bg-grid-pattern {
-  background-size: 32px 32px;
+.bg-corporate-grid {
+  background-size: 40px 40px;
   background-image: 
-    linear-gradient(to right, rgba(255, 255, 255, 0.03) 1px, transparent 1px),
-    linear-gradient(to bottom, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+    linear-gradient(to right, rgba(255, 255, 255, 0.025) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255, 255, 255, 0.025) 1px, transparent 1px);
 }
 
-/* Natural Gradient Text */
-.text-gradient-natural {
-  background: linear-gradient(135deg, #ffffff 30%, #94a3b8 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-}
-
-.text-gradient-sky {
-  background: linear-gradient(135deg, #ffffff 20%, #38bdf8 100%);
+/* Professional Gradient Text */
+.text-gradient-corporate {
+  background: linear-gradient(135deg, #ffffff 40%, #60a5fa 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
