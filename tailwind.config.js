@@ -7,31 +7,30 @@ export default {
   theme: {
     extend: {
       colors: {
-        amazon: {
-          header: '#131921',
-          subnav: '#232f3e',
-          amber: '#febd69',
-          'amber-hover': '#f3a847',
-          orange: '#ff9900',
-          dark: '#0f1111',
-          bg: '#eaeded',
-          card: '#ffffff',
-          border: '#d5d9d9',
-          muted: '#565959',
-          link: '#007185',
-          'link-hover': '#c7511f',
-          green: '#007600'
+        ms: {
+          blue: '#0078d4', // Microsoft Azure Blue
+          'blue-dark': '#005a9e',
+          'blue-light': '#eff6fc',
+          red: '#f25022',   // Microsoft Red Logo Accent
+          green: '#7fba00', // Microsoft Green Logo Accent
+          cyan: '#00a4ef',  // Microsoft Cyan Logo Accent
+          yellow: '#ffb900', // Microsoft Yellow Logo Accent
+          bg: '#f3f4f6',
+          surface: '#ffffff',
+          dark: '#111827',
+          muted: '#4b5563',
+          border: '#e5e7eb',
         }
       },
       fontFamily: {
-        sans: ['Inter', 'Ember', 'Arial', 'sans-serif'],
-        display: ['Space Grotesk', 'Inter', 'sans-serif'],
+        sans: ['Segoe UI', 'Inter', '-apple-system', 'sans-serif'],
+        display: ['Space Grotesk', 'Segoe UI', 'sans-serif'],
         mono: ['JetBrains Mono', 'Fira Code', 'monospace'],
       },
       boxShadow: {
-        'amazon-card': '0 2px 5px 0 rgba(213, 217, 217, 0.5)',
-        'amazon-hover': '0 4px 12px 0 rgba(0, 0, 0, 0.12)',
-        'amazon-btn': '0 2px 5px 0 rgba(213, 217, 217, 0.5)',
+        'fluent': '0 1.6px 3.6px 0 rgba(0, 0, 0, 0.132), 0 0.3px 0.9px 0 rgba(0, 0, 0, 0.108)',
+        'fluent-hover': '0 6.4px 14.4px 0 rgba(0, 0, 0, 0.132), 0 1.2px 3.6px 0 rgba(0, 0, 0, 0.108)',
+        'fluent-elevated': '0 25.6px 57.6px 0 rgba(0, 0, 0, 0.22), 0 4.8px 14.4px 0 rgba(0, 0, 0, 0.18)',
       }
     },
   },

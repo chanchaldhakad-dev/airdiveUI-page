@@ -27,17 +27,17 @@ export default function ServicesSection() {
   };
 
   return (
-    <section id="services" className="relative py-28 bg-[#eaeded] border-b border-[#d5d9d9] overflow-hidden">
+    <section id="services" className="relative py-28 bg-[#f3f4f6] border-b border-gray-200 overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         
         {/* Header */}
         <div className="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-6">
           <div>
-            <span className="text-xs font-mono font-bold tracking-wider text-[#007185] uppercase mb-3 block">
+            <span className="text-xs font-mono font-bold tracking-wider text-[#0078d4] uppercase mb-3 block">
               AIRDIVE SERVICE CATALOG
             </span>
-            <h2 className="font-display text-3xl sm:text-5xl font-extrabold tracking-tight text-[#0f1111]">
-              Enterprise IT & <span className="text-[#007185]">Software Services</span>
+            <h2 className="font-display text-3xl sm:text-5xl font-extrabold tracking-tight text-slate-900">
+              Enterprise IT & <span className="text-[#0078d4]">Software Services</span>
             </h2>
           </div>
 
@@ -45,14 +45,14 @@ export default function ServicesSection() {
           <div className="hidden md:flex items-center gap-3">
             <button
               onClick={() => scroll('left')}
-              className="btn-amazon-secondary p-3 rounded-md text-[#0f1111] transition-all shadow-sm active:scale-95"
+              className="p-3 rounded-md bg-white hover:bg-slate-100 border border-slate-200 text-slate-700 transition-all shadow-xs active:scale-95"
               aria-label="Scroll left"
             >
               <ArrowLeft className="w-5 h-5" />
             </button>
             <button
               onClick={() => scroll('right')}
-              className="btn-amazon-secondary p-3 rounded-md text-[#0f1111] transition-all shadow-sm active:scale-95"
+              className="p-3 rounded-md bg-white hover:bg-slate-100 border border-slate-200 text-slate-700 transition-all shadow-xs active:scale-95"
               aria-label="Scroll right"
             >
               <ArrowRight className="w-5 h-5" />
@@ -76,39 +76,40 @@ export default function ServicesSection() {
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.4, delay: index * 0.06 }}
-                className="snap-start flex-shrink-0 w-[85vw] max-w-[320px] sm:w-[350px] amazon-card p-8 rounded-lg flex flex-col justify-between group"
+                whileHover={{ y: -4 }}
+                className="snap-start flex-shrink-0 w-[85vw] max-w-[320px] sm:w-[350px] fluent-card p-8 rounded-xl flex flex-col justify-between group"
               >
                 <div>
-                  <div className="w-12 h-12 rounded-md bg-[#232f3e] text-[#febd69] flex items-center justify-center mb-6">
+                  <div className="w-12 h-12 rounded-lg bg-blue-50 text-[#0078d4] flex items-center justify-center mb-6">
                     <IconComponent className="w-6 h-6" />
                   </div>
 
-                  <h3 className="font-display text-xl font-bold text-[#0f1111] mb-3 group-hover:text-[#007185] transition-colors">
+                  <h3 className="font-display text-xl font-bold text-slate-900 mb-3 group-hover:text-[#0078d4] transition-colors">
                     {service.name}
                   </h3>
 
-                  <p className="text-[#565959] text-xs sm:text-sm leading-relaxed font-normal mb-6">
+                  <p className="text-slate-600 text-xs sm:text-sm leading-relaxed font-normal mb-6">
                     {service.description}
                   </p>
 
                   {/* Deliverables Checklist */}
-                  <div className="space-y-2 pt-4 border-t border-[#eaeded] mb-6">
+                  <div className="space-y-2 pt-4 border-t border-slate-100 mb-6">
                     {service.deliverables.map((del, dIdx) => (
-                      <div key={dIdx} className="flex items-center gap-2 text-xs text-[#0f1111]">
-                        <CheckCircle2 className="w-3.5 h-3.5 text-[#007600] flex-shrink-0" />
+                      <div key={dIdx} className="flex items-center gap-2 text-xs text-slate-800">
+                        <CheckCircle2 className="w-3.5 h-3.5 text-[#7fba00] flex-shrink-0" />
                         <span>{del}</span>
                       </div>
                     ))}
                   </div>
                 </div>
 
-                <div className="pt-4 border-t border-[#eaeded] flex items-center justify-between">
-                  <span className="text-[10px] font-mono text-[#565959] uppercase">
+                <div className="pt-4 border-t border-slate-100 flex items-center justify-between">
+                  <span className="text-[10px] font-mono text-slate-400 uppercase">
                     Service 0{index + 1}
                   </span>
                   <a
                     href="#contact"
-                    className="btn-amazon-primary px-4 py-2 text-xs flex items-center gap-1 shadow-sm"
+                    className="inline-flex items-center gap-1 px-4 py-2 rounded-md text-xs font-bold text-white bg-[#0078d4] hover:bg-[#005a9e] shadow-xs"
                   >
                     <span>Inquire Now</span>
                     <ArrowRight className="w-3.5 h-3.5" />

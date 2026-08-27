@@ -9,92 +9,66 @@
   }
   
   body {
-    background-color: #eaeded;
-    color: #0f1111;
-    font-family: 'Inter', -apple-system, Arial, sans-serif;
+    background-color: #f3f4f6;
+    color: #111827;
+    font-family: 'Segoe UI', 'Inter', -apple-system, sans-serif;
     overflow-x: hidden;
     letter-spacing: -0.01em;
   }
 
   h1, h2, h3, h4, h5, h6 {
-    font-family: 'Space Grotesk', sans-serif;
+    font-family: 'Space Grotesk', 'Segoe UI', sans-serif;
     letter-spacing: -0.025em;
-    color: #0f1111;
+    color: #111827;
     font-weight: 700;
   }
 }
 
-/* Amazon Theme Scrollbar */
+/* Microsoft Fluent Scrollbar */
 ::-webkit-scrollbar {
-  width: 7px;
+  width: 6px;
 }
 
 ::-webkit-scrollbar-track {
-  background: #131921;
+  background: #f3f4f6;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #febd69;
-  border-radius: 4px;
+  background: #cbd5e1;
+  border-radius: 3px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #f3a847;
+  background: #0078d4;
 }
 
-/* Amazon Card Style */
-.amazon-card {
+/* Microsoft Fluent Card Styling */
+.fluent-card {
   background: #ffffff;
-  border: 1px solid #d5d9d9;
-  border-radius: 8px;
-  box-shadow: 0 2px 5px 0 rgba(213, 217, 217, 0.5);
-  transition: all 0.2s ease;
+  border: 1px solid #e5e7eb;
+  border-radius: 12px;
+  box-shadow: 0 1.6px 3.6px 0 rgba(0, 0, 0, 0.1), 0 0.3px 0.9px 0 rgba(0, 0, 0, 0.08);
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-.amazon-card:hover {
+.fluent-card:hover {
   background: #ffffff;
-  border-color: #007185;
-  box-shadow: 0 4px 12px 0 rgba(0, 0, 0, 0.12);
-  transform: translateY(-2px);
+  border-color: #0078d4;
+  transform: translateY(-3px);
+  box-shadow: 0 6.4px 14.4px 0 rgba(0, 120, 212, 0.15), 0 1.2px 3.6px 0 rgba(0, 0, 0, 0.08);
 }
 
-/* Amazon Primary Button */
-.btn-amazon-primary {
-  background: #febd69;
-  border: 1px solid #a88734;
-  border-radius: 8px;
-  color: #111827;
-  font-weight: 700;
-  box-shadow: 0 2px 5px 0 rgba(213, 217, 217, 0.5);
-  transition: all 0.15s ease;
+/* Fluent Glass Acrylic Card */
+.fluent-glass {
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(16px);
+  border: 1px solid rgba(229, 231, 235, 0.8);
+  border-radius: 16px;
 }
 
-.btn-amazon-primary:hover {
-  background: #f3a847;
-  border-color: #9c7e31;
-}
-
-/* Amazon Secondary Button */
-.btn-amazon-secondary {
-  background: #e7e9ec;
-  border: 1px solid #adb1b8;
-  border-radius: 8px;
-  color: #111827;
-  font-weight: 600;
-  transition: all 0.15s ease;
-}
-
-.btn-amazon-secondary:hover {
-  background: #d8dadf;
-}
-
-/* Amazon Link Style */
-.amazon-link {
-  color: #007185;
-  font-weight: 600;
-}
-
-.amazon-link:hover {
-  color: #c7511f;
-  text-decoration: underline;
+/* Microsoft Gradient Text */
+.text-gradient-microsoft {
+  background: linear-gradient(135deg, #111827 30%, #0078d4 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
