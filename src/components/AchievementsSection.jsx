@@ -43,7 +43,7 @@ function AnimatedCounter({ targetNumber, suffix, duration = 1.8 }) {
 
 export default function AchievementsSection() {
   return (
-    <section className="relative py-20 bg-white border-b border-slate-200">
+    <section className="relative py-20 bg-white border-b border-zinc-200">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         
         <div className="grid grid-cols-2 lg:grid-cols-4 gap-6">
@@ -57,21 +57,21 @@ export default function AchievementsSection() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.4, delay: idx * 0.08 }}
-                className="corporate-card p-6 sm:p-8 rounded-2xl text-center flex flex-col items-center justify-center border border-slate-200"
+                className="human-card p-6 sm:p-8 rounded-2xl text-center flex flex-col items-center justify-center border border-zinc-200"
               >
-                <div className="p-3 rounded-xl bg-sky-50 border border-sky-200 text-sky-600 mb-4">
+                <div className="p-3 rounded-xl bg-blue-50 border border-blue-200 text-blue-600 mb-4">
                   <IconComp className="w-5 h-5" />
                 </div>
 
-                <div className="font-display text-4xl sm:text-5xl font-extrabold text-slate-900 tracking-tight mb-2">
+                <div className="font-display text-4xl sm:text-5xl font-extrabold text-zinc-900 tracking-tight mb-2">
                   <AnimatedCounter targetNumber={item.number} suffix={item.suffix} />
                 </div>
 
-                <h4 className="font-display font-semibold text-sm sm:text-base text-slate-800 mb-1">
+                <h4 className="font-display font-bold text-sm sm:text-base text-zinc-800 mb-1">
                   {item.label}
                 </h4>
 
-                <p className="text-slate-500 text-xs font-normal max-w-[200px]">
+                <p className="text-zinc-500 text-xs font-normal max-w-[200px]">
                   {item.description}
                 </p>
               </motion.div>

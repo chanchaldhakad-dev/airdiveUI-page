@@ -1,10 +1,10 @@
-// AirDive Master Data Store - Professional Enterprise IT Partner Copy
+// AirDive Master Data Store - Human Agency Copy & Real Team
 
 export const COMPANY_INFO = {
   name: "AIRDIVE PRIVATE LIMITED",
-  tagline: "Enterprise Software Engineering, Custom AI Systems & IT Infrastructure",
-  heroHeading: "Enterprise Technology Engineering for Scaling Businesses",
-  heroDescription: "AIRDIVE PRIVATE LIMITED is a global enterprise software and technology partner. We engineer high-availability web platforms, cross-platform mobile apps, cloud backend infrastructure, and custom AI integrations for modern organizations.",
+  tagline: "Digital Product Studio & Software Engineering Agency",
+  heroHeading: "We Design & Build Exceptional Software Products",
+  heroDescription: "AirDive is a digital product studio. We help ambitious startups and established companies craft modern web applications, mobile apps, and custom software systems.",
   email: "support@airdive.co.in",
   phones: ["+91 6261406934", "+91 6263760047"],
   address: "Ward No.8, House No. 763, Dhakad Colony, Kothi No. 27 Bypass Road, Shivpuri, Madhya Pradesh - 473551, IN",
@@ -18,274 +18,269 @@ export const COMPANY_INFO = {
 export const PROCESS_STEPS = [
   {
     number: "01",
-    title: "Discovery & Requirements",
-    description: "In-depth analysis of technical specifications, architecture feasibility, security standards, and business goals."
+    title: "Discovery & Planning",
+    description: "We work with you to clarify goals, define product features, map user journeys, and establish technical milestones."
   },
   {
     number: "02",
-    title: "System Design & UI/UX Blueprint",
-    description: "Architecting high-fidelity UI/UX design systems, database schemas, microservice topologies, and API specs."
+    title: "UI/UX & Prototyping",
+    description: "Creating clean design systems, wireframes, and interactive visual prototypes before writing a single line of code."
   },
   {
     number: "03",
-    title: "Agile Software Engineering",
-    description: "Building production-ready software using modular codebases, strict type-checking, and continuous integration."
+    title: "Full-Stack Development",
+    description: "Engineering robust frontends and scalable backend architectures using modern frameworks and clean code practices."
   },
   {
     number: "04",
-    title: "QA, Security Audit & Cloud Launch",
-    description: "Rigorous automated testing, security penetration audits, and zero-downtime deployment to multi-region cloud servers."
+    title: "Testing & Launch",
+    description: "Comprehensive multi-device testing, performance audits, and smooth deployment to cloud infrastructure."
   },
   {
     number: "05",
-    title: "24/7 SLA Management & Growth",
-    description: "Continuous infrastructure monitoring, latency optimization, security patches, and long-term feature expansion."
+    title: "Maintenance & Growth",
+    description: "Ongoing server management, security updates, feature iterations, and long-term technical support."
   }
 ];
 
 export const BENTO_FEATURES = [
   {
-    id: "cloud-engineering",
-    category: "Cloud Infrastructure",
-    title: "High-Availability Cloud Systems",
-    description: "Designing containerized microservices and auto-scaling Kubernetes clusters with guaranteed 99.99% system availability.",
-    icon: "Server",
-    metric: "99.99% SLA Uptime",
-    tag: "Kubernetes & AWS/GCP"
-  },
-  {
-    id: "api-architecture",
-    category: "Backend APIs",
-    title: "High-Frequency API Gateways",
-    description: "Ultra-fast RESTful and GraphQL backend endpoints engineered for sub-second data processing and high throughput.",
-    icon: "Cpu",
-    metric: "<15ms Median Latency",
-    tag: "REST & GraphQL APIs"
-  },
-  {
-    id: "ai-integration",
-    category: "AI Engineering",
-    title: "Enterprise AI & RAG Pipelines",
-    description: "Integrating secure Retrieval-Augmented Generation (RAG) models, automated data processing, and enterprise AI workflows.",
-    icon: "BrainCircuit",
-    metric: "Private & Secure Models",
-    tag: "LLM & Vector Search"
+    id: "web-apps",
+    category: "Web Engineering",
+    title: "Modern Web Applications",
+    description: "Fast, responsive web portals and SaaS platforms built with React, Next.js, and scalable backends.",
+    icon: "Layout",
+    badge: "React & Next.js"
   },
   {
     id: "mobile-engineering",
-    category: "Mobile Solutions",
-    title: "Cross-Platform Mobile Apps",
-    description: "Building native-quality iOS and Android applications with offline synchronization, encrypted local storage, and biometrics.",
+    category: "Mobile Product",
+    title: "iOS & Android Mobile Apps",
+    description: "Native-quality mobile applications with intuitive navigation, offline data sync, and instant push alerts.",
     icon: "Smartphone",
-    metric: "iOS & Android Unified",
-    tag: "React Native & Flutter"
+    badge: "iOS & Android"
   },
   {
-    id: "security-compliance",
-    category: "Cyber Security",
-    title: "Zero-Trust Security & Audits",
-    description: "Implementing role-based access controls (RBAC), end-to-end data encryption, and automated vulnerability scanning.",
+    id: "cloud-infrastructure",
+    category: "Cloud Systems",
+    title: "Scalable Cloud Architecture",
+    description: "Reliable backend API middleware, microservices, and database setups configured for 99.9% availability.",
+    icon: "Server",
+    badge: "AWS & Cloud API"
+  },
+  {
+    id: "ai-integration",
+    category: "Smart Features",
+    title: "Practical AI & Automation",
+    description: "Integrating intelligent search, automated data parsing, and conversational tools into existing business platforms.",
+    icon: "Sparkles",
+    badge: "AI Automation"
+  },
+  {
+    id: "security-standards",
+    category: "Data Protection",
+    title: "Secure Code Standards",
+    description: "Role-based user permissions, end-to-end data encryption, and adherence to web security best practices.",
     icon: "ShieldCheck",
-    metric: "SOC-2 & ISO Principles",
-    tag: "Encrypted Data Layers"
+    badge: "Encrypted & Audit-Ready"
   },
   {
-    id: "ui-ux-systems",
-    category: "Design Systems",
-    title: "Human-Centric Interface Design",
-    description: "Crafting modern, accessible, and responsive user interfaces that elevate brand experience and conversion rates.",
-    icon: "Layout",
-    metric: "WCAG 2.1 Accessible",
-    tag: "Design Systems"
+    id: "ui-ux-design",
+    category: "Product Design",
+    title: "Human-Centered UI/UX",
+    description: "Clean visual design systems and thoughtful interface details crafted for usability and delight.",
+    icon: "Palette",
+    badge: "Figma & Design Systems"
   }
 ];
 
 export const SERVICES = [
   {
     id: "web-dev",
-    name: "Enterprise Web Applications",
-    description: "Custom web portals, SaaS platforms, and enterprise dashboards built with React, Next.js, Node.js, and modern backends.",
-    deliverables: ["Custom Web Portals", "Admin Analytics Dashboards", "SEO & Performance Audits"],
+    name: "Web Application Development",
+    description: "Custom web applications, customer portals, and internal dashboards built with React, Next.js, and Node.js.",
+    deliverables: ["Custom Web Apps", "Admin Control Panels", "Performance Optimization"],
     icon: "Globe"
   },
   {
     id: "mobile-app",
-    name: "Mobile Application Development",
-    description: "Native and cross-platform mobile apps for iOS and Android engineered for performance, security, and offline support.",
-    deliverables: ["iOS & Android Apps", "Push Notification Gateway", "Offline Sync Systems"],
+    name: "Mobile App Development",
+    description: "Cross-platform mobile applications for iOS and Android built for speed, offline access, and intuitive UX.",
+    deliverables: ["Cross-Platform iOS/Android", "App Store Publishing", "Push Notification Gateway"],
     icon: "Smartphone"
   },
   {
     id: "ui-ux",
-    name: "UI/UX & Product Design Systems",
-    description: "User research, wireframing, interactive prototyping, and design system libraries for enterprise software.",
-    deliverables: ["User Journey Mapping", "Design System Specs", "Interactive Prototypes"],
+    name: "UI/UX Product Design",
+    description: "User research, wireframing, high-fidelity UI design, and reusable component libraries for web and mobile.",
+    deliverables: ["Interface Wireframes", "Figma Design Systems", "Clickable Prototypes"],
     icon: "Layout"
   },
   {
     id: "ai-sol",
-    name: "Enterprise AI & Automation",
-    description: "Integrating tailored AI models, automated document extraction, smart search, and conversational bots into business tools.",
-    deliverables: ["Private RAG Knowledge Base", "Automated Document OCR", "AI Assistant Bots"],
+    name: "AI & Workflow Automation",
+    description: "Integrating automated document search, data extraction, and intelligent assistants into business systems.",
+    deliverables: ["Document AI Extraction", "Custom RAG Pipelines", "Workflow Bots"],
     icon: "BrainCircuit"
   },
   {
     id: "custom-sw",
     name: "Custom Software Solutions",
-    description: "Tailor-made ERP software, CRM systems, automated billing software, and custom backend API middleware.",
-    deliverables: ["Custom ERP/CRM Systems", "Third-Party API Integrations", "Database Migration"],
+    description: "Tailor-made ERP tools, billing platforms, inventory management systems, and third-party API integrations.",
+    deliverables: ["Bespoke ERP/CRM", "Third-Party Integrations", "Database Architecture"],
     icon: "Code2"
   },
   {
-    id: "devops-cloud",
-    name: "Cloud Architecture & DevOps",
-    description: "CI/CD automated deployment pipelines, cloud migration, serverless backends, and 24/7 infrastructure management.",
-    deliverables: ["Docker & Kubernetes Setup", "CI/CD Automation Pipelines", "Cloud Cost Optimization"],
+    id: "cloud-devops",
+    name: "Cloud Hosting & Support",
+    description: "Server setup, CI/CD automated deployment pipelines, database management, and ongoing technical maintenance.",
+    deliverables: ["AWS/GCP Cloud Setup", "Automated CI/CD", "24/7 Monitoring & Support"],
     icon: "Cloud"
   }
 ];
 
 export const ACHIEVEMENTS = [
   {
-    number: 50,
+    number: 30,
     suffix: "+",
-    label: "Projects Delivered",
-    description: "Enterprise web platforms, mobile apps, and custom software systems."
+    label: "Projects Shipped",
+    description: "Custom web applications, mobile apps, and software platforms launched."
   },
   {
-    number: 25,
+    number: 18,
     suffix: "+",
-    label: "Enterprise Clients",
-    description: "Companies and organizations relying on AirDive technology."
+    label: "Happy Clients",
+    description: "Startups and companies partnering with AirDive for digital engineering."
   },
   {
-    number: 15,
+    number: 12,
     suffix: "+",
-    label: "Core Stacks",
-    description: "Expertise in React, Node, Python, AWS, Docker, and Mobile platforms."
+    label: "Tech Stacks Mastered",
+    description: "Expertise across React, React Native, Node.js, Python, AWS, and Cloud databases."
   },
   {
-    number: 99.99,
+    number: 99.9,
     suffix: "%",
-    label: "Target System SLA",
-    description: "High-reliability backend infrastructure and uptime monitoring."
+    label: "Uptime & Quality",
+    description: "Clean code structure and dependable server reliability."
   }
 ];
 
 export const CLIENTS = [
-  { name: "Enterprise Fintech", logoText: "FINTECH SOLUTIONS", category: "Financial Software" },
-  { name: "Cloud Operations", logoText: "CLOUD OPERATIONS", category: "Infrastructure" },
-  { name: "Global Commerce", logoText: "GLOBAL COMMERCE", category: "E-Commerce" },
-  { name: "Healthcare Systems", logoText: "HEALTHCARE TECH", category: "Health IT" },
-  { name: "Logistics Network", logoText: "LOGISTICS PRO", category: "Supply Chain" },
-  { name: "Smart Automation", logoText: "SMART AUTO", category: "AI & Automation" },
+  { name: "SaaS Platforms", logoText: "SAAS PLATFORMS", category: "Web Apps" },
+  { name: "E-Commerce", logoText: "E-COMMERCE HUB", category: "Retail Tech" },
+  { name: "Fintech Tools", logoText: "FINTECH STUDIO", category: "Finance" },
+  { name: "Healthcare Tech", logoText: "HEALTHCARE APP", category: "Health & Care" },
+  { name: "Logistics Systems", logoText: "LOGISTICS PRO", category: "Supply Chain" },
+  { name: "Business Tools", logoText: "ENTERPRISE BIZ", category: "ERP Software" },
 ];
 
 export const TEAM_MEMBERS = [
   {
     name: "Upendra Verma",
     role: "Founder",
-    bio: "Leading overall corporate vision, technology strategy, and engineering standards at AIRDIVE PRIVATE LIMITED.",
+    bio: "Guiding strategic vision, product architecture, and long-term technology direction at AirDive.",
     initials: "UV",
-    titleTag: "Executive Leadership"
+    tag: "Founder & Product Strategy"
   },
   {
     name: "Pankaj Kumar Sahu",
     role: "Chief Executive Officer (CEO)",
-    bio: "Overseeing company operations, strategic partnerships, project delivery, and enterprise client growth.",
+    bio: "Leading agency operations, client engagements, project management, and business expansion.",
     initials: "PS",
-    titleTag: "Executive Operations"
+    tag: "CEO & Client Operations"
   },
   {
     name: "Kiran Bhati",
     role: "Core Team Member",
-    bio: "Specializing in full-stack software development, cloud API engineering, and system quality assurance.",
+    bio: "Engineering full-stack web applications, cloud backends, and system quality assurance.",
     initials: "KB",
-    titleTag: "Software Engineering"
+    tag: "Full-Stack Development"
   },
   {
     name: "Jeeya Shrivastav",
     role: "Core Team Member",
-    bio: "Focusing on UI/UX product design, client interface systems, and frontend Web applications.",
+    bio: "Crafting intuitive UI/UX design systems, visual interfaces, and frontend web experiences.",
     initials: "JS",
-    titleTag: "Product & UI/UX Design"
+    tag: "UI/UX & Frontend Design"
   }
 ];
 
 export const BLOG_POSTS = [
   {
-    id: "enterprise-software-architecture-2026",
-    title: "Best Practices for Architecting High-Availability Enterprise Software",
-    category: "Software Engineering",
-    date: "Aug 24, 2026",
-    readTime: "5 min read",
+    id: "how-we-build-modern-web-apps-2026",
+    title: "How We Architect Modern Web Applications for Speed and Maintainability",
+    category: "Engineering",
+    date: "Aug 25, 2026",
+    readTime: "4 min read",
     image: "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?auto=format&fit=crop&w=1200&q=80",
-    description: "A comprehensive technical overview of building resilient microservices, auto-scaling cloud deployments, and zero-downtime CI/CD pipelines.",
+    description: "A look at the tools, patterns, and component structures we use at AirDive to ship fast, clean web apps.",
     content: `
-      As enterprises scale, software reliability becomes paramount. A single hour of downtime can cost thousands of dollars in revenue and lost customer trust.
+      Building a modern web application requires balancing user experience, performance, and developer ergonomics.
 
-      ### Key Pillars of High-Availability Systems
-      - **Stateless Microservices**: Ensuring backend servers can be dynamically scaled up or down without breaking active user sessions.
-      - **Database Replication & Caching**: Utilizing Redis caching layers and multi-region database read-replicas to minimize database bottlenecking.
-      - **Automated CI/CD Deployment**: Running automated integration and security test suites before deploying code to production.
+      ### Our Core Stack Choices
+      - **React & Next.js**: For fast server-side rendering, seamless routing, and rich interactive components.
+      - **Tailwind CSS**: For clean, maintainable design systems and rapid responsive styling.
+      - **TypeScript & Node.js**: Ensuring type safety across API boundaries and database schemas.
 
-      At AirDive Private Limited, we design cloud backend systems engineered for maximum resilience and high request throughput.
+      Taking the time to structure your project cleanly early on pays massive dividends as your user base scales.
     `
   },
   {
-    id: "practical-ai-integration-guide",
-    title: "Integrating Secure AI Capabilities into Existing Enterprise Platforms",
-    category: "Enterprise AI",
-    date: "Aug 18, 2026",
-    readTime: "6 min read",
+    id: "practical-ai-features-for-businesses",
+    title: "Adding Practical AI Features to Your Product Without Over-Engineering",
+    category: "AI & Product",
+    date: "Aug 19, 2026",
+    readTime: "5 min read",
     image: "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=1200&q=80",
-    description: "How to safely introduce Retrieval-Augmented Generation (RAG) and automated AI document processing without compromising data privacy.",
+    description: "Simple, effective ways to incorporate AI capabilities that deliver real business value to your users.",
     content: `
-      Integrating artificial intelligence into enterprise software requires strict data privacy, role-based access control, and predictable output validation.
+      AI doesn't have to be complicated. Instead of trying to build complex custom models, most products benefit from integrating targeted AI workflows.
 
-      ### Recommended Enterprise AI Architecture
-      1. **On-Premise or Private Cloud Hosting**: Deploying fine-tuned models within VPC boundaries to prevent customer data leakages.
-      2. **Vector Indexing & RAG Pipelines**: Indexing internal documentation into secure vector stores like Qdrant for accurate contextual recall.
-      3. **Human-in-the-Loop Validation**: Ensuring critical automated actions require human supervisor authorization.
+      ### 3 High-Impact Use Cases
+      1. **Intelligent Document Search**: Let users ask natural questions over internal manuals and reports.
+      2. **Automated Content Structuring**: Extract key data fields from raw customer inputs or uploaded forms.
+      3. **Smart Assistance**: Provide contextual suggestions inside your application workflows.
     `
   },
   {
-    id: "cross-platform-mobile-development-strategies",
-    title: "Choosing the Right Mobile Tech Stack for Enterprise Applications",
-    category: "Mobile Engineering",
-    date: "Aug 02, 2026",
+    id: "designing-intuitive-user-interfaces",
+    title: "The Principles of Clean, Human-Centered UI/UX Design",
+    category: "Product Design",
+    date: "Aug 05, 2026",
     readTime: "4 min read",
     image: "https://images.unsplash.com/photo-1581291518633-83b4ebd1d83e?auto=format&fit=crop&w=1200&q=80",
-    description: "Evaluating native vs cross-platform frameworks for security, performance, and long-term codebase maintenance.",
+    description: "Why clear visual hierarchy, consistent spacing, and thoughtful feedback make software intuitive.",
     content: `
-      Mobile applications have become primary touchpoints for modern business operations. Choosing between native Swift/Kotlin and cross-platform React Native/Flutter depends on performance requirements and budget.
+      Great design is invisible. When software is designed well, users accomplish their goals without feeling confused or frustrated.
 
-      ### Key Decision Factors
-      - **Hardware Integration**: If heavy bluetooth or low-level background processing is required, native development is ideal.
-      - **Speed to Market**: Cross-platform frameworks allow deploying to both iOS App Store and Google Play Store simultaneously from a unified codebase.
+      ### Key Design Guidelines
+      - Prioritize clarity over cleverness.
+      - Maintain consistent spacing and typographic scales.
+      - Ensure high contrast for accessibility across all devices.
     `
   }
 ];
 
 export const FAQS = [
   {
-    question: "What is AIRDIVE PRIVATE LIMITED?",
-    answer: "AIRDIVE PRIVATE LIMITED is an IT consultancy and software engineering company building custom web platforms, mobile applications, cloud backend systems, and custom AI integrations for modern organizations."
+    question: "What does AirDive do?",
+    answer: "AIRDIVE PRIVATE LIMITED is a digital product studio and software development agency. We build custom web applications, mobile apps, UI/UX design systems, and custom business software."
   },
   {
-    question: "Who leads AIRDIVE PRIVATE LIMITED?",
-    answer: "The company was founded by Upendra Verma, with Pankaj Kumar Sahu serving as Chief Executive Officer (CEO), alongside core team members Kiran Bhati and Jeeya Shrivastav."
+    question: "Who is in the core leadership team?",
+    answer: "AirDive was founded by Upendra Verma, with Pankaj Kumar Sahu serving as Chief Executive Officer (CEO), alongside core team members Kiran Bhati and Jeeya Shrivastav."
   },
   {
-    question: "What services does AirDive provide?",
-    answer: "We provide end-to-end Enterprise Web Application Development, Mobile App Development (iOS & Android), UI/UX Product Design Systems, Cloud Architecture & DevOps, Custom AI Integrations, and Bespoke Enterprise Software."
+    question: "What is your development process like?",
+    answer: "We follow a 5-step collaborative process: 01 Discovery & Planning, 02 UI/UX & Prototyping, 03 Full-Stack Development, 04 Testing & Launch, and 05 Maintenance & Growth."
   },
   {
-    question: "How does AirDive ensure software security and quality?",
-    answer: "We follow strict software engineering practices including automated unit/integration testing, role-based access control, end-to-end data encryption, multi-stage code reviews, and zero-downtime deployment pipelines."
+    question: "Can AirDive build custom software for our specific workflow?",
+    answer: "Yes! We specialize in designing and engineering custom business portals, internal management tools, mobile applications, and API integrations tailored specifically to your business."
   },
   {
-    question: "How can we start a project or request a proposal?",
-    answer: "You can reach out directly via our contact portal on this page, email us at support@airdive.co.in, or call our team at +91 6261406934 / +91 6263760047 to schedule a technical discovery session."
+    question: "How do we get started on a project?",
+    answer: "You can send us a message through the contact form below, email us at support@airdive.co.in, or call our team at +91 6261406934 / +91 6263760047 to discuss your project requirements."
   }
 ];

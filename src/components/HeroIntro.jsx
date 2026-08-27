@@ -1,11 +1,10 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
-import { ArrowRight, Terminal, Server, ShieldCheck, Activity, CheckCircle2, Copy } from 'lucide-react';
+import { ArrowRight, Sparkles, CheckCircle2, TrendingUp, Users, Shield, Layers, Code, Globe } from 'lucide-react';
 import { COMPANY_INFO } from '../data/airdiveData';
 
 export default function HeroIntro() {
-  const [activeTab, setActiveTab] = useState('api');
-  const [copied, setCopied] = useState(false);
+  const [activeTab, setActiveTab] = useState('overview');
 
   const scrollToHome = () => {
     const el = document.getElementById('home');
@@ -14,278 +13,202 @@ export default function HeroIntro() {
     }
   };
 
-  const handleCopyCode = (text) => {
-    navigator.clipboard.writeText(text);
-    setCopied(true);
-    setTimeout(() => setCopied(false), 2000);
-  };
-
-  const apiSnippet = `{
-  "status": "200 OK",
-  "system": "AirDive Cloud Gateway v2.4",
-  "latency_ms": 11.4,
-  "nodes_active": [
-    "ap-south-1 (Mumbai)",
-    "us-east-1 (N. Virginia)",
-    "eu-central-1 (Frankfurt)"
-  ],
-  "security_audit": "PASSED (TLS 1.3, SOC-2)"
-}`;
-
-  const aiSnippet = `// AirDive Enterprise AI Pipeline
-const aiPipeline = new AirDiveAI({
-  model: "enterprise-rag-v4",
-  securityMode: "zero-knowledge-vpc",
-  maxLatency: "150ms"
-});`;
-
   return (
-    <section className="relative w-full min-h-screen pt-28 sm:pt-32 pb-16 sm:pb-24 flex items-center justify-center overflow-hidden bg-gradient-to-b from-sky-50/70 via-white to-slate-50 border-b border-slate-200">
+    <section className="relative w-full min-h-screen pt-28 sm:pt-36 pb-20 sm:pb-28 flex items-center justify-center overflow-hidden bg-[#fafafa] border-b border-zinc-200">
       
-      {/* Background Video Layer */}
-      <div className="absolute inset-0 z-0">
-        <video
-          autoPlay
-          loop
-          muted
-          playsInline
-          poster="/og-image.jpg"
-          className="w-full h-full object-cover opacity-[0.06] filter grayscale"
-        >
-          <source src="/intro.mp4" type="video/mp4" />
-          <source src="/hero.mp4" type="video/mp4" />
-          <source src="/assets/hero.mp4" type="video/mp4" />
-        </video>
-        
-        {/* Light Corporate Grid Overlay */}
-        <div className="absolute inset-0 bg-corporate-grid opacity-60" />
-      </div>
+      {/* Background Dots Pattern */}
+      <div className="absolute inset-0 bg-human-dots opacity-70 pointer-events-none" />
 
       {/* Hero Content Container */}
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
         
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
           
-          {/* Left Column: Heading & Intro */}
+          {/* Left Column: Human Studio Headline & CTAs */}
           <div className="lg:col-span-6 text-left">
             
-            {/* Enterprise Status Badge */}
+            {/* Agency Badge */}
             <motion.div
-              initial={{ opacity: 0, y: -15 }}
+              initial={{ opacity: 0, y: -12 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5 }}
-              className="inline-flex items-center gap-2 px-3 py-1 sm:px-3.5 sm:py-1.5 rounded-full bg-sky-100/80 border border-sky-200 text-sky-800 text-[11px] sm:text-xs font-mono mb-4 sm:mb-6 shadow-sm"
+              transition={{ duration: 0.4 }}
+              className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-blue-50 border border-blue-200 text-blue-700 text-xs font-semibold mb-6 shadow-sm"
             >
-              <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse flex-shrink-0" />
-              <span>AIRDIVE ONLINE • SLA 99.99%</span>
+              <Sparkles className="w-3.5 h-3.5 text-blue-600" />
+              <span>DIGITAL PRODUCT STUDIO & SOFTWARE ENGINEERING</span>
             </motion.div>
 
-            {/* Main Headline */}
+            {/* Headline */}
             <motion.h1
               initial={{ opacity: 0, y: 15 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.1 }}
-              className="font-display text-3xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-slate-900 mb-4 sm:mb-6 leading-[1.18]"
+              className="font-display text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-zinc-900 mb-6 leading-[1.15]"
             >
-              Enterprise Software <br className="hidden sm:inline" />
-              <span className="text-gradient-corporate">& IT Engineering</span>
+              We Design & Build <br />
+              <span className="text-blue-600">Exceptional Software</span>
             </motion.h1>
 
-            {/* Supporting Description */}
+            {/* Description */}
             <motion.p
               initial={{ opacity: 0, y: 15 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.2 }}
-              className="text-slate-600 text-sm sm:text-lg font-normal leading-relaxed mb-6 sm:mb-8 max-w-xl"
+              className="text-zinc-600 text-base sm:text-lg font-normal leading-relaxed mb-8 max-w-xl"
             >
-              AIRDIVE PRIVATE LIMITED is a global technology partner building high-availability web applications, mobile platforms, custom AI workflows, and cloud backend infrastructure.
+              AirDive is a technology studio. We partner with founders and companies to design, engineer, and ship web applications, mobile apps, and custom software products.
             </motion.p>
 
-            {/* Action Buttons */}
+            {/* Dual CTAs */}
             <motion.div
               initial={{ opacity: 0, y: 15 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.3 }}
-              className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3 sm:gap-4 mb-6 sm:mb-8"
+              className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3 sm:gap-4 mb-8"
             >
               <a
                 href="#contact"
-                className="inline-flex items-center justify-center gap-2 px-6 sm:px-7 py-3 sm:py-3.5 text-sm font-semibold tracking-wide text-white bg-sky-600 hover:bg-sky-700 rounded-lg shadow-md hover:scale-[1.02] active:scale-[0.98] transition-all text-center"
+                className="inline-flex items-center justify-center gap-2 px-7 py-3.5 text-sm font-semibold tracking-wide text-white bg-blue-600 hover:bg-blue-700 rounded-xl shadow-md hover:shadow-lg transition-all text-center"
               >
-                Schedule Technical Call
+                Start a Project
                 <ArrowRight className="w-4 h-4" />
               </a>
 
               <button
                 onClick={scrollToHome}
-                className="inline-flex items-center justify-center gap-2 px-6 py-3 sm:py-3.5 text-sm font-medium tracking-wide text-slate-700 hover:text-slate-900 bg-white hover:bg-slate-100 border border-slate-200 rounded-lg shadow-sm transition-colors text-center"
+                className="inline-flex items-center justify-center gap-2 px-6 py-3.5 text-sm font-medium tracking-wide text-zinc-700 hover:text-zinc-900 bg-white hover:bg-zinc-100 border border-zinc-300 rounded-xl shadow-sm transition-colors text-center"
               >
-                Explore Services
+                View Services & Process
               </button>
             </motion.div>
 
-            {/* Trust Metrics Pill */}
+            {/* Trust Highlights */}
             <motion.div
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ delay: 0.4 }}
-              className="flex flex-wrap items-center gap-4 sm:gap-6 pt-4 border-t border-slate-200 text-[11px] sm:text-xs font-mono text-slate-600"
+              className="flex flex-wrap items-center gap-6 pt-6 border-t border-zinc-200 text-xs text-zinc-600"
             >
-              <div className="flex items-center gap-1.5">
-                <ShieldCheck className="w-4 h-4 text-emerald-600 flex-shrink-0" />
-                <span>SOC-2 & ISO Standards</span>
+              <div className="flex items-center gap-2">
+                <CheckCircle2 className="w-4 h-4 text-emerald-600 flex-shrink-0" />
+                <span>Full-Stack Development</span>
               </div>
-              <div className="flex items-center gap-1.5">
-                <Activity className="w-4 h-4 text-sky-600 flex-shrink-0" />
-                <span>High-Frequency Infra</span>
+              <div className="flex items-center gap-2">
+                <CheckCircle2 className="w-4 h-4 text-blue-600 flex-shrink-0" />
+                <span>UI/UX Product Design</span>
+              </div>
+              <div className="flex items-center gap-2">
+                <CheckCircle2 className="w-4 h-4 text-purple-600 flex-shrink-0" />
+                <span>Mobile iOS & Android</span>
               </div>
             </motion.div>
 
           </div>
 
-          {/* Right Column: Interactive System Terminal / Dashboard Widget */}
+          {/* Right Column: Clean App / Product UI Showcase Window */}
           <motion.div
             initial={{ opacity: 0, x: 20 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.6, delay: 0.2 }}
-            className="lg:col-span-6 w-full overflow-hidden"
+            className="lg:col-span-6 w-full"
           >
-            <div className="terminal-window p-1 w-full max-w-full overflow-hidden">
+            <div className="app-mockup-window bg-white w-full">
               
-              {/* Window Header */}
-              <div className="bg-[#1e293b] px-3 sm:px-4 py-2.5 sm:py-3 rounded-t-[10px] flex items-center justify-between border-b border-slate-700">
-                <div className="flex items-center gap-1.5">
-                  <span className="w-2.5 h-2.5 rounded-full bg-red-500 inline-block" />
-                  <span className="w-2.5 h-2.5 rounded-full bg-yellow-500 inline-block" />
-                  <span className="w-2.5 h-2.5 rounded-full bg-green-500 inline-block" />
-                  <span className="text-[10px] sm:text-xs font-mono text-slate-300 ml-1 truncate max-w-[140px] sm:max-w-none">airdive-gateway-v2.4</span>
+              {/* Browser Window Bar */}
+              <div className="bg-zinc-100 px-4 py-3 border-b border-zinc-200 flex items-center justify-between">
+                <div className="flex items-center gap-2">
+                  <span className="w-3 h-3 rounded-full bg-zinc-300 inline-block" />
+                  <span className="w-3 h-3 rounded-full bg-zinc-300 inline-block" />
+                  <span className="w-3 h-3 rounded-full bg-zinc-300 inline-block" />
+                  <div className="ml-2 bg-white px-3 py-0.5 rounded-md border border-zinc-200 text-[11px] font-mono text-zinc-500 flex items-center gap-1.5">
+                    <Globe className="w-3 h-3 text-zinc-400" />
+                    <span>app.airdive.co.in/dashboard</span>
+                  </div>
                 </div>
-                <div className="flex items-center gap-1 text-[10px] font-mono text-emerald-400 bg-emerald-950/60 border border-emerald-500/30 px-2 py-0.5 rounded-full">
-                  <CheckCircle2 className="w-3 h-3" />
-                  <span>ONLINE</span>
-                </div>
-              </div>
-
-              {/* Navigation Tabs */}
-              <div className="bg-[#0f172a] px-2 sm:px-4 pt-2 flex items-center gap-1 overflow-x-auto border-b border-slate-800 scrollbar-none">
-                <button
-                  onClick={() => setActiveTab('api')}
-                  className={`px-2.5 py-1.5 rounded-t-lg text-[11px] font-mono transition-colors flex items-center gap-1 whitespace-nowrap ${
-                    activeTab === 'api'
-                      ? 'bg-[#1e293b] text-sky-400 border-t border-x border-slate-700 font-semibold'
-                      : 'text-slate-400 hover:text-white'
-                  }`}
-                >
-                  <Server className="w-3 h-3" />
-                  Cloud API
-                </button>
-
-                <button
-                  onClick={() => setActiveTab('ai')}
-                  className={`px-2.5 py-1.5 rounded-t-lg text-[11px] font-mono transition-colors flex items-center gap-1 whitespace-nowrap ${
-                    activeTab === 'ai'
-                      ? 'bg-[#1e293b] text-sky-400 border-t border-x border-slate-700 font-semibold'
-                      : 'text-slate-400 hover:text-white'
-                  }`}
-                >
-                  <Terminal className="w-3 h-3" />
-                  AI Pipeline
-                </button>
-
-                <button
-                  onClick={() => setActiveTab('status')}
-                  className={`px-2.5 py-1.5 rounded-t-lg text-[11px] font-mono transition-colors flex items-center gap-1 whitespace-nowrap ${
-                    activeTab === 'status'
-                      ? 'bg-[#1e293b] text-sky-400 border-t border-x border-slate-700 font-semibold'
-                      : 'text-slate-400 hover:text-white'
-                  }`}
-                >
-                  <Activity className="w-3 h-3" />
-                  Server Status
-                </button>
-              </div>
-
-              {/* Tab Content Display */}
-              <div className="p-4 sm:p-5 font-mono text-[11px] sm:text-xs text-slate-300 min-h-[220px] bg-[#090d16] overflow-x-auto">
-                {activeTab === 'api' && (
-                  <div>
-                    <div className="flex items-center justify-between mb-2 text-slate-400 text-[10px]">
-                      <span className="truncate">GET /api/v2/system/health</span>
-                      <button
-                        onClick={() => handleCopyCode(apiSnippet)}
-                        className="flex items-center gap-1 hover:text-white transition-colors flex-shrink-0 ml-2"
-                      >
-                        <Copy className="w-3 h-3" />
-                        <span>{copied ? 'Copied!' : 'Copy'}</span>
-                      </button>
-                    </div>
-                    <pre className="text-emerald-400 leading-relaxed whitespace-pre-wrap break-all">
-                      {apiSnippet}
-                    </pre>
-                  </div>
-                )}
-
-                {activeTab === 'ai' && (
-                  <div>
-                    <div className="flex items-center justify-between mb-2 text-slate-400 text-[10px]">
-                      <span>airdive-ai-agent.ts</span>
-                      <button
-                        onClick={() => handleCopyCode(aiSnippet)}
-                        className="flex items-center gap-1 hover:text-white transition-colors flex-shrink-0 ml-2"
-                      >
-                        <Copy className="w-3 h-3" />
-                        <span>{copied ? 'Copied!' : 'Copy'}</span>
-                      </button>
-                    </div>
-                    <pre className="text-sky-300 leading-relaxed whitespace-pre-wrap break-all">
-                      {aiSnippet}
-                    </pre>
-                  </div>
-                )}
-
-                {activeTab === 'status' && (
-                  <div className="space-y-3 pt-1">
-                    <div>
-                      <div className="flex justify-between mb-1 text-slate-400 text-[11px]">
-                        <span>CPU Utilization</span>
-                        <span className="text-emerald-400">14.2%</span>
-                      </div>
-                      <div className="w-full h-2 bg-slate-900 rounded-full overflow-hidden">
-                        <div className="h-full bg-emerald-400 rounded-full w-[14%]" />
-                      </div>
-                    </div>
-
-                    <div>
-                      <div className="flex justify-between mb-1 text-slate-400 text-[11px]">
-                        <span>Memory Allocation</span>
-                        <span className="text-sky-400">2.1 GB / 16 GB</span>
-                      </div>
-                      <div className="w-full h-2 bg-slate-900 rounded-full overflow-hidden">
-                        <div className="h-full bg-sky-400 rounded-full w-[22%]" />
-                      </div>
-                    </div>
-
-                    <div className="pt-2 border-t border-slate-800 grid grid-cols-2 gap-3 text-[10px]">
-                      <div className="bg-slate-900/60 p-2.5 rounded-lg border border-slate-800">
-                        <span className="text-slate-400 block">Requests Today</span>
-                        <span className="text-white font-bold text-xs">1,248,930</span>
-                      </div>
-                      <div className="bg-slate-900/60 p-2.5 rounded-lg border border-slate-800">
-                        <span className="text-slate-400 block">System Uptime</span>
-                        <span className="text-emerald-400 font-bold text-xs">99.998%</span>
-                      </div>
-                    </div>
-                  </div>
-                )}
-              </div>
-
-              {/* Terminal Footer */}
-              <div className="bg-[#0f172a] px-3 sm:px-4 py-2 rounded-b-[10px] border-t border-slate-800 flex items-center justify-between text-[10px] font-mono text-slate-400">
-                <span className="flex items-center gap-1 truncate">
-                  <span className="w-2 h-2 rounded-full bg-emerald-400 flex-shrink-0" />
-                  <span className="truncate">ap-south-1 (India)</span>
+                <span className="text-[10px] font-mono text-emerald-600 bg-emerald-50 border border-emerald-200 px-2 py-0.5 rounded-full font-semibold">
+                  LIVE APP DEMO
                 </span>
-                <span className="truncate ml-2">AIRDIVE PRIVATE LIMITED</span>
+              </div>
+
+              {/* Mockup Dashboard Content */}
+              <div className="p-6 bg-zinc-50/50 space-y-6">
+                
+                {/* Top Metrics Row */}
+                <div className="grid grid-cols-3 gap-3">
+                  <div className="bg-white p-4 rounded-xl border border-zinc-200 shadow-sm">
+                    <div className="flex items-center justify-between text-zinc-500 mb-1">
+                      <span className="text-[11px] font-medium">Active Users</span>
+                      <Users className="w-3.5 h-3.5 text-blue-600" />
+                    </div>
+                    <div className="text-lg font-bold text-zinc-900">14,280</div>
+                    <div className="text-[10px] text-emerald-600 font-semibold mt-1">↑ +18% this month</div>
+                  </div>
+
+                  <div className="bg-white p-4 rounded-xl border border-zinc-200 shadow-sm">
+                    <div className="flex items-center justify-between text-zinc-500 mb-1">
+                      <span className="text-[11px] font-medium">API Speed</span>
+                      <TrendingUp className="w-3.5 h-3.5 text-emerald-600" />
+                    </div>
+                    <div className="text-lg font-bold text-zinc-900">12 ms</div>
+                    <div className="text-[10px] text-emerald-600 font-semibold mt-1">Sub-second response</div>
+                  </div>
+
+                  <div className="bg-white p-4 rounded-xl border border-zinc-200 shadow-sm">
+                    <div className="flex items-center justify-between text-zinc-500 mb-1">
+                      <span className="text-[11px] font-medium">App Status</span>
+                      <Shield className="w-3.5 h-3.5 text-purple-600" />
+                    </div>
+                    <div className="text-lg font-bold text-zinc-900">100%</div>
+                    <div className="text-[10px] text-emerald-600 font-semibold mt-1">All Systems Normal</div>
+                  </div>
+                </div>
+
+                {/* Project Activity Preview Card */}
+                <div className="bg-white p-5 rounded-xl border border-zinc-200 shadow-sm">
+                  <div className="flex items-center justify-between mb-4">
+                    <h4 className="font-display text-sm font-bold text-zinc-900">Active Engineering Projects</h4>
+                    <span className="text-xs font-semibold text-blue-600">4 In Progress</span>
+                  </div>
+
+                  <div className="space-y-3 text-xs">
+                    <div className="flex items-center justify-between p-2.5 rounded-lg bg-zinc-50 border border-zinc-100">
+                      <div className="flex items-center gap-2.5">
+                        <div className="w-7 h-7 rounded-lg bg-blue-100 text-blue-700 flex items-center justify-center font-bold text-xs">
+                          WA
+                        </div>
+                        <div>
+                          <div className="font-semibold text-zinc-900">Web App Platform</div>
+                          <div className="text-[10px] text-zinc-500">React • Node.js • Cloud</div>
+                        </div>
+                      </div>
+                      <span className="px-2 py-0.5 rounded-full text-[10px] font-mono bg-emerald-100 text-emerald-800 font-semibold">
+                        Ready for QA
+                      </span>
+                    </div>
+
+                    <div className="flex items-center justify-between p-2.5 rounded-lg bg-zinc-50 border border-zinc-100">
+                      <div className="flex items-center gap-2.5">
+                        <div className="w-7 h-7 rounded-lg bg-purple-100 text-purple-700 flex items-center justify-center font-bold text-xs">
+                          MA
+                        </div>
+                        <div>
+                          <div className="font-semibold text-zinc-900">Mobile iOS & Android App</div>
+                          <div className="text-[10px] text-zinc-500">React Native • Firebase</div>
+                        </div>
+                      </div>
+                      <span className="px-2 py-0.5 rounded-full text-[10px] font-mono bg-blue-100 text-blue-800 font-semibold">
+                        Sprint 3 Active
+                      </span>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Footer Bar of Mockup */}
+                <div className="flex items-center justify-between text-xs text-zinc-500 pt-2 border-t border-zinc-200">
+                  <span className="font-mono text-[11px]">AIRDIVE PRIVATE LIMITED</span>
+                  <span className="font-semibold text-zinc-700 text-[11px]">Digital Product Studio</span>
+                </div>
+
               </div>
 
             </div>
