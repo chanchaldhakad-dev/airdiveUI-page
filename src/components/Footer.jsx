@@ -14,19 +14,15 @@ export default function Footer() {
         
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-12 mb-16">
           
-          {/* Col 1: Corporate Summary */}
+          {/* Col 1: Corporate Summary & Official AirDive Logo */}
           <div className="lg:col-span-4 space-y-4">
             <Link to="/" className="flex items-center gap-3 group focus:outline-none">
-              {/* Microsoft 4-Square Accent Grid */}
-              <div className="grid grid-cols-2 gap-0.5 w-6 h-6 flex-shrink-0">
-                <div className="bg-[#f25022] rounded-[0.5px]" />
-                <div className="bg-[#7fba00] rounded-[0.5px]" />
-                <div className="bg-[#00a4ef] rounded-[0.5px]" />
-                <div className="bg-[#ffb900] rounded-[0.5px]" />
+              <div className="w-10 h-10 rounded-xl bg-slate-800 p-1 border border-slate-700 flex items-center justify-center group-hover:border-[#0078d4] transition-all">
+                <img src="/logo.svg" alt="AirDive Logo" className="w-7 h-7 object-contain" />
               </div>
               <div className="flex flex-col">
                 <span className="font-display font-bold text-lg text-white">AIRDIVE</span>
-                <span className="text-[9px] tracking-widest text-slate-400 uppercase -mt-1 font-mono">PRIVATE LIMITED</span>
+                <span className="text-[9px] tracking-widest text-slate-400 uppercase -mt-1 font-mono font-semibold">PRIVATE LIMITED</span>
               </div>
             </Link>
 

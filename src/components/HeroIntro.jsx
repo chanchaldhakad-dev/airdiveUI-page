@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
-import { ArrowRight, Sparkles, CheckCircle2, Cloud, Server, ShieldCheck, Activity, Cpu, Code2, Globe } from 'lucide-react';
+import { ArrowRight, CheckCircle2, Cloud, ShieldCheck, Activity, Cpu, Globe } from 'lucide-react';
 import { COMPANY_INFO } from '../data/airdiveData';
 
 export default function HeroIntro() {
@@ -27,21 +27,15 @@ export default function HeroIntro() {
           {/* Left Column: Heading & Microsoft Fluent Intro */}
           <div className="lg:col-span-6 text-left">
             
-            {/* Enterprise Tag */}
+            {/* AirDive Badge with Logo */}
             <motion.div
               initial={{ opacity: 0, y: -12 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.4 }}
               className="inline-flex items-center gap-2.5 px-3.5 py-1.5 rounded-full bg-white border border-gray-200 text-slate-800 text-xs font-semibold mb-6 shadow-xs"
             >
-              {/* Microsoft 4-Square Accent */}
-              <div className="grid grid-cols-2 gap-0.5 w-3.5 h-3.5 flex-shrink-0">
-                <div className="bg-[#f25022] rounded-[0.5px]" />
-                <div className="bg-[#7fba00] rounded-[0.5px]" />
-                <div className="bg-[#00a4ef] rounded-[0.5px]" />
-                <div className="bg-[#ffb900] rounded-[0.5px]" />
-              </div>
-              <span>ENTERPRISE SOFTWARE & CLOUD ENGINEERING</span>
+              <img src="/logo.svg" alt="AirDive Logo" className="w-4 h-4 object-contain flex-shrink-0" />
+              <span>AIRDIVE ENTERPRISE SOFTWARE & CLOUD ENGINEERING</span>
             </motion.div>
 
             {/* Main Headline */}
@@ -118,13 +112,8 @@ export default function HeroIntro() {
               
               {/* Window Header */}
               <div className="bg-slate-900 text-white px-4 py-3 rounded-t-lg flex items-center justify-between border-b border-slate-800">
-                <div className="flex items-center gap-3">
-                  <div className="grid grid-cols-2 gap-0.5 w-4 h-4">
-                    <div className="bg-[#f25022]" />
-                    <div className="bg-[#7fba00]" />
-                    <div className="bg-[#00a4ef]" />
-                    <div className="bg-[#ffb900]" />
-                  </div>
+                <div className="flex items-center gap-2">
+                  <img src="/logo.svg" alt="AirDive Logo" className="w-4 h-4 object-contain" />
                   <span className="text-xs font-mono text-slate-200 font-semibold">AirDive Cloud Hub v3.0</span>
                 </div>
                 <div className="flex items-center gap-1.5 text-[10px] font-mono text-emerald-400 bg-emerald-950/60 border border-emerald-500/30 px-2.5 py-0.5 rounded-full font-bold">

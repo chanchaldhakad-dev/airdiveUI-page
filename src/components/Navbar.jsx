@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
-import { Menu, X, ArrowUpRight, ChevronRight } from 'lucide-react';
+import { Menu, X, ArrowUpRight } from 'lucide-react';
 
 const NAV_ITEMS = [
   { label: 'Overview', href: '#home' },
@@ -70,27 +70,22 @@ export default function Navbar() {
     <header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-200 ${
         isScrolled
-          ? 'bg-white/95 backdrop-blur-md border-b border-gray-200/80 py-3 shadow-sm'
+          ? 'bg-white/95 backdrop-blur-md border-b border-gray-200/80 py-3 shadow-xs'
           : 'bg-transparent py-4 sm:py-5'
       }`}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between">
         
-        {/* Microsoft-Style AirDive Logo */}
+        {/* Official AirDive Logo & Brand Name */}
         <Link to="/" className="flex items-center gap-3 group focus:outline-none">
-          {/* Microsoft 4-Square Accent Grid */}
-          <div className="grid grid-cols-2 gap-0.5 w-6 h-6 flex-shrink-0 group-hover:scale-105 transition-transform">
-            <div className="bg-[#f25022] rounded-[1px]" />
-            <div className="bg-[#7fba00] rounded-[1px]" />
-            <div className="bg-[#00a4ef] rounded-[1px]" />
-            <div className="bg-[#ffb900] rounded-[1px]" />
+          <div className="w-10 h-10 rounded-xl bg-blue-50 border border-blue-200 p-1 flex items-center justify-center group-hover:border-[#0078d4] group-hover:scale-105 transition-all shadow-xs">
+            <img src="/logo.svg" alt="AirDive Logo" className="w-7 h-7 object-contain" />
           </div>
-
           <div className="flex flex-col">
             <span className="font-display font-extrabold text-xl tracking-tight text-slate-900 group-hover:text-[#0078d4] transition-colors">
               AIRDIVE
             </span>
-            <span className="text-[9px] tracking-widest text-slate-500 uppercase -mt-1 font-mono">
+            <span className="text-[9px] tracking-widest text-slate-500 uppercase -mt-1 font-mono font-semibold">
               PRIVATE LIMITED
             </span>
           </div>
@@ -141,7 +136,7 @@ export default function Navbar() {
           <a
             href="#contact"
             onClick={(e) => handleNavClick(e, { href: '#contact' })}
-            className="inline-flex items-center justify-center px-5 py-2 text-xs font-bold tracking-wide text-white bg-[#0078d4] hover:bg-[#005a9e] rounded-md shadow-sm hover:shadow transition-all"
+            className="inline-flex items-center justify-center px-5 py-2 text-xs font-bold tracking-wide text-white bg-[#0078d4] hover:bg-[#005a9e] rounded-md shadow-xs hover:shadow transition-all"
           >
             <span className="flex items-center gap-1.5">
               Contact AirDive
