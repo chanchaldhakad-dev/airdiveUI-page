@@ -7,29 +7,31 @@ export default {
   theme: {
     extend: {
       colors: {
-        airdive: {
-          bg: '#fafafa',
-          surface: '#ffffff',
-          'surface-subtle': '#f4f4f5',
-          border: '#e4e4e7',
-          'border-strong': '#d4d4d8',
-          blue: '#2563eb', // Royal Blue
-          'blue-dark': '#1d4ed8',
-          'blue-light': '#eff6ff',
-          text: '#18181b', // Warm Charcoal
-          muted: '#52525b',
-          subtle: '#71717a'
+        amazon: {
+          header: '#131921',
+          subnav: '#232f3e',
+          amber: '#febd69',
+          'amber-hover': '#f3a847',
+          orange: '#ff9900',
+          dark: '#0f1111',
+          bg: '#eaeded',
+          card: '#ffffff',
+          border: '#d5d9d9',
+          muted: '#565959',
+          link: '#007185',
+          'link-hover': '#c7511f',
+          green: '#007600'
         }
       },
       fontFamily: {
-        sans: ['Inter', '-apple-system', 'BlinkMacSystemFont', 'sans-serif'],
+        sans: ['Inter', 'Ember', 'Arial', 'sans-serif'],
         display: ['Space Grotesk', 'Inter', 'sans-serif'],
         mono: ['JetBrains Mono', 'Fira Code', 'monospace'],
       },
       boxShadow: {
-        'human-card': '0 1px 3px 0 rgba(0, 0, 0, 0.05), 0 1px 2px -1px rgba(0, 0, 0, 0.05)',
-        'human-hover': '0 12px 24px -4px rgba(0, 0, 0, 0.08), 0 4px 6px -2px rgba(0, 0, 0, 0.04)',
-        'app-window': '0 25px 50px -12px rgba(0, 0, 0, 0.15)',
+        'amazon-card': '0 2px 5px 0 rgba(213, 217, 217, 0.5)',
+        'amazon-hover': '0 4px 12px 0 rgba(0, 0, 0, 0.12)',
+        'amazon-btn': '0 2px 5px 0 rgba(213, 217, 217, 0.5)',
       }
     },
   },

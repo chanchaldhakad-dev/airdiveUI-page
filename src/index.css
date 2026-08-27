@@ -9,66 +9,92 @@
   }
   
   body {
-    background-color: #fafafa;
-    color: #18181b;
-    font-family: 'Inter', -apple-system, sans-serif;
+    background-color: #eaeded;
+    color: #0f1111;
+    font-family: 'Inter', -apple-system, Arial, sans-serif;
     overflow-x: hidden;
-    letter-spacing: -0.011em;
+    letter-spacing: -0.01em;
   }
 
   h1, h2, h3, h4, h5, h6 {
     font-family: 'Space Grotesk', sans-serif;
     letter-spacing: -0.025em;
-    color: #18181b;
+    color: #0f1111;
     font-weight: 700;
   }
 }
 
-/* Human Scrollbar */
+/* Amazon Theme Scrollbar */
 ::-webkit-scrollbar {
-  width: 6px;
+  width: 7px;
 }
 
 ::-webkit-scrollbar-track {
-  background: #fafafa;
+  background: #131921;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #d4d4d8;
-  border-radius: 3px;
+  background: #febd69;
+  border-radius: 4px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #2563eb;
+  background: #f3a847;
 }
 
-/* Human-Crafted Agency Card */
-.human-card {
+/* Amazon Card Style */
+.amazon-card {
   background: #ffffff;
-  border: 1px solid #e4e4e7;
-  border-radius: 16px;
-  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.04);
-  transition: all 0.25s ease;
+  border: 1px solid #d5d9d9;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px 0 rgba(213, 217, 217, 0.5);
+  transition: all 0.2s ease;
 }
 
-.human-card:hover {
+.amazon-card:hover {
   background: #ffffff;
-  border-color: #a1a1aa;
+  border-color: #007185;
+  box-shadow: 0 4px 12px 0 rgba(0, 0, 0, 0.12);
   transform: translateY(-2px);
-  box-shadow: 0 12px 24px -4px rgba(0, 0, 0, 0.08);
 }
 
-/* Human Browser / App Mockup Window */
-.app-mockup-window {
-  background: #ffffff;
-  border: 1px solid #e4e4e7;
-  border-radius: 16px;
-  box-shadow: 0 20px 45px -10px rgba(0, 0, 0, 0.1);
-  overflow: hidden;
+/* Amazon Primary Button */
+.btn-amazon-primary {
+  background: #febd69;
+  border: 1px solid #a88734;
+  border-radius: 8px;
+  color: #111827;
+  font-weight: 700;
+  box-shadow: 0 2px 5px 0 rgba(213, 217, 217, 0.5);
+  transition: all 0.15s ease;
 }
 
-/* Subtle Warm Pattern */
-.bg-human-dots {
-  background-size: 24px 24px;
-  background-image: radial-gradient(circle, #e4e4e7 1px, transparent 1px);
+.btn-amazon-primary:hover {
+  background: #f3a847;
+  border-color: #9c7e31;
+}
+
+/* Amazon Secondary Button */
+.btn-amazon-secondary {
+  background: #e7e9ec;
+  border: 1px solid #adb1b8;
+  border-radius: 8px;
+  color: #111827;
+  font-weight: 600;
+  transition: all 0.15s ease;
+}
+
+.btn-amazon-secondary:hover {
+  background: #d8dadf;
+}
+
+/* Amazon Link Style */
+.amazon-link {
+  color: #007185;
+  font-weight: 600;
+}
+
+.amazon-link:hover {
+  color: #c7511f;
+  text-decoration: underline;
 }

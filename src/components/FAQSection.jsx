@@ -11,17 +11,16 @@ export default function FAQSection() {
   };
 
   return (
-    <section id="faq" className="relative py-28 bg-white border-b border-slate-200">
+    <section id="faq" className="relative py-28 bg-[#ffffff] border-b border-[#d5d9d9]">
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         
         {/* Header */}
         <div className="text-center max-w-2xl mx-auto mb-16">
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-sky-50 border border-sky-200 text-sky-800 text-xs font-mono mb-4">
-            <HelpCircle className="w-3.5 h-3.5" />
-            <span>FREQUENTLY ASKED QUESTIONS</span>
-          </div>
-          <h2 className="font-display text-3xl sm:text-5xl font-bold tracking-tight text-slate-900">
-            Enterprise <span className="text-gradient-corporate">FAQ & Engagement</span>
+          <span className="text-xs font-mono font-bold tracking-wider text-[#007185] uppercase mb-3 block">
+            FREQUENTLY ASKED QUESTIONS
+          </span>
+          <h2 className="font-display text-3xl sm:text-5xl font-extrabold tracking-tight text-[#0f1111]">
+            AirDive Help & <span className="text-[#007185]">FAQ</span>
           </h2>
         </div>
 
@@ -37,8 +36,8 @@ export default function FAQSection() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.3, delay: idx * 0.05 }}
-                className={`corporate-card rounded-2xl overflow-hidden border transition-all duration-200 ${
-                  isOpen ? 'border-sky-500 bg-sky-50/40 shadow-sm' : 'border-slate-200 bg-white'
+                className={`amazon-card rounded-lg overflow-hidden border transition-all duration-200 ${
+                  isOpen ? 'border-[#007185] bg-sky-50/20' : 'border-[#d5d9d9] bg-white'
                 }`}
               >
                 {/* Question Trigger */}
@@ -46,13 +45,13 @@ export default function FAQSection() {
                   onClick={() => toggleIndex(idx)}
                   className="w-full p-6 text-left flex items-center justify-between gap-4 focus:outline-none"
                 >
-                  <span className="font-display font-semibold text-base sm:text-lg text-slate-900">
+                  <span className="font-display font-bold text-base sm:text-lg text-[#0f1111]">
                     {faq.question}
                   </span>
-                  <div className={`w-7 h-7 rounded-full flex items-center justify-center transition-all ${
-                    isOpen ? 'bg-sky-600 text-white rotate-180' : 'bg-slate-100 text-slate-500'
+                  <div className={`w-7 h-7 rounded-md flex items-center justify-center transition-all ${
+                    isOpen ? 'bg-[#febd69] text-[#111827] rotate-180' : 'bg-[#eaeded] text-[#565959]'
                   }`}>
-                    {isOpen ? <Minus className="w-4 h-4" /> : <Plus className="w-4 h-4" />}
+                    {isOpen ? <Minus className="w-4 h-4 font-bold" /> : <Plus className="w-4 h-4 font-bold" />}
                   </div>
                 </button>
 
@@ -66,7 +65,7 @@ export default function FAQSection() {
                       transition={{ duration: 0.25, ease: 'easeInOut' }}
                       className="overflow-hidden"
                     >
-                      <div className="px-6 pb-6 pt-0 text-slate-600 text-xs sm:text-sm font-normal leading-relaxed border-t border-slate-100">
+                      <div className="px-6 pb-6 pt-0 text-[#565959] text-xs sm:text-sm font-normal leading-relaxed border-t border-[#eaeded]">
                         {faq.answer}
                       </div>
                     </motion.div>
